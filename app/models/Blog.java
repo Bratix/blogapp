@@ -42,4 +42,12 @@ public class Blog {
     }
 
     public Blog() { }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", blog_title='" + blog_title + '\'' +
+                '}';
+    }
 }

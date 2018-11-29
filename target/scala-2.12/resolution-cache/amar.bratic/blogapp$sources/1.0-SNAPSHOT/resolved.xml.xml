@@ -4,7 +4,7 @@
 		module="blogapp$sources"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20181127170054"
+		publication="20181129021906"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
