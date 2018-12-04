@@ -1,0 +1,26 @@
+@(title: String)(content: Html)@import views.html.partials._navbar
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="@routes.Assets.versioned("css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("css/bootstrap-theme.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("css/style.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("css/swiper.min.css")">
+
+
+    <title>@title</title>
+</head>
+<body>
+
+    @_navbar(name = session().get("name"))
+    @content
+
+
+    <script src="@routes.Assets.versioned("js/jquery-3.3.1.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.versioned("js/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.versioned("js/main.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.versioned("js/swiper.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.versioned("js/swipper.js")" type="text/javascript"></script>
+</body>
+</html>

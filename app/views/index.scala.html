@@ -1,5 +1,43 @@
-@()
+@import views.html.partials.blog_thumb
+@import views.html.partials.post_thumb
+@(blogs : List[Blog], blogPosts: List[BlogPost])
+@base(title = "Home") {
+    <section>
+    <div class="swiper-container">
+            <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+                <!-- Slides -->
 
-@main("Welcome to Play") {
-  <h1>Welcome to Play!</h1>
+
+
+            @for(blog <- blogs) {
+                <div class="swiper-slide" height="250px">
+                @*<div class="blog-picture col-md-offset-1 col-md-3">
+                <img src="{{ blog.picture.url }}" alt="" height="300" width="400">
+                </div>*@
+                @blog_thumb(blog)
+                </div>
+            }
+
+
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    </section>
+
+    <section class="col-md-4 col-md-offset-1 padding-top-20">
+
+        <div class="section-title">
+            <h1 class="white-text text-center">Popular posts</h1>
+        </div>
+        <br>
+        @for(post <- blogPosts) {
+            <div class="post-thumb pl-25">
+                @post_thumb(post)
+            </div>
+        }
+
+    </section>
+
 }
+

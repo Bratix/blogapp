@@ -1,0 +1,326 @@
+/* padding and margin classes */
+
+.padding-top-20{
+    padding-top: 20px;
+}
+.padding-bottom-10{
+    padding-bottom: 10px;
+}
+.padding-bottom-20{
+    padding-bottom: 20px;
+}
+.padding-left-100{
+    padding-left: 100px;
+}
+
+.mr-50{
+    margin-right: 50px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.pl-50{
+    padding-left:50px;
+}
+
+.pl-25{
+    padding-left:25px;
+}
+
+.mgb-25{
+    margin-bottom: 25px;
+}
+
+/* navbar editing */
+.navbar{
+    border-radius: 0;
+    color: skyblue;
+}
+
+.navbar-brand{
+    color: black;
+    font-family: 'Mali', cursive;
+    font-size: 25px;
+    padding-top:3mm;
+}
+
+.navbar a{
+    color: black;
+    white-space: nowrap;
+    font-family: 'Mali', cursive;
+    font-size: 17px;
+}
+
+.navbar a:hover{
+    text-decoration: none;
+    color: aliceblue;
+    white-space: nowrap;
+    font-family: 'Mali', cursive;
+    font-size: 17px;
+}
+
+.separator{
+    font-size: 20px;
+}
+
+.search-form{
+    padding-top: 2.5mm;
+    white-space: nowrap;
+    display: block;
+}
+
+.search-input{
+    border-radius: 10px;
+    border-color: rgb(44, 120, 185);
+    background-color:aliceblue;
+    width: 8cm;
+}
+
+.loop-icon{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+
+.search-form{
+    padding-top: 2.5mm;
+    white-space: nowrap;
+    display: block;
+}
+
+.search-input{
+    border-radius: 10px;
+    border-color: rgb(44, 120, 185);
+    background-color:aliceblue;
+    width: 8cm;
+}
+
+.login-area{
+    padding-top: 3mm;
+}
+
+/* html tags editing */
+p{
+    font-family: 'Mali', cursive;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Mali', cursive;
+}
+
+body{
+    background: white url("background.jpg");
+}
+
+a {
+    color: black;
+    white-space: nowrap;
+    font-family: 'Mali', cursive;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: aliceblue;
+    white-space: nowrap;
+    font-family: 'Mali', cursive;
+}
+
+img{
+    border-radius: 20px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+/* small adjustment classes */
+
+.page-links{
+    padding-top: 3mm;
+}
+
+.page-links a{
+    padding-left: 1cm;
+}
+
+.lightgrey-text{
+    color: rgb(231, 224, 224);
+}
+
+.grey-text{
+    color: grey;
+}
+
+.white-text{
+    color: white;
+}
+
+/* button styling */
+
+.btn-link{
+    color: black;
+    font-family: 'Mali', cursive;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: white;
+    padding: 5px;
+    border: solid;
+    border-width: 1px;
+    border-color: skyblue;
+}
+
+.btn-link :active,visited{
+    color: black;
+    background-color: white;
+}
+
+.btn-link:hover{
+    color: white;
+    text-decoration: none;
+    background-color: skyblue;
+}
+
+
+/* swiper */
+.swiper-container {
+    width: 80%;
+    height: 150px;
+}
+
+.swiper-button-prev .swiper-button-next{
+    color: skyblue;
+}
+
+/* section related */
+
+.section-title{
+    background: skyblue;
+    border-radius: 30px;
+    padding:3px;
+}
+
+
+/* everytrhing thumb related */
+
+.post-thumb{
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.thumb-link{
+    color: black;
+    white-space: nowrap;
+    font-family: 'Mali', cursive;
+}
+
+.thumb-link:hover{
+    text-decoration: none;
+    color: skyblue;
+    white-space: nowrap;
+    font-family: 'Mali', cursive;
+}
+
+
+/* breadcumb */
+
+.breadcumb-area{
+    height: 250px;
+    margin-bottom: 50px;
+    z-index: 1;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.breadcumb-title{
+    padding-top:75px;
+    color: black;
+    font-weight: bolder;
+}
+
+.comment-form textarea:focus{
+    border-color: skyblue;
+    border-width: 1px;
+    height: 100px;
+    width: 18cm;
+    border-radius: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.comment-form textarea{
+    border-color: grey;
+    border-width: 1px;
+    height: 100px;
+    width: 18cm;
+    border-radius: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.comment-content{
+    border-width: thin;
+    border-style: solid;
+    border-color: skyblue;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* comment buttons */
+
+.comment-buttons form{
+    display: inline;
+}
+.comment-buttons button{
+    font-size: 15px;
+}
+.comment-buttons button:hover{
+    font-size: 15px;
+}
+
+.input-text{
+    border-color: darkblue;
+    border-radius: 3px;
+}
+
+.btn-link-category{
+    color: black;
+    font-family: 'Mali', cursive;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: white;
+    padding: 5px;
+    border: solid;
+    border-width: 1px;
+    border-color: skyblue;
+    width: 110px;
+}
+
+.btn-link-category :active,visited{
+    color: black;
+    background-color: white;
+}
+
+.btn-link-category:hover{
+    color: white;
+    text-decoration: none;
+    background-color: skyblue;
+}
+
+ .container-category{
+    position: relative;
+    text-align: center;
+ }
+
+ .catagory-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

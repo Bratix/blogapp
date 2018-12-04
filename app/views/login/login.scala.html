@@ -1,0 +1,26 @@
+@(loginForm: Form[Login])
+@import helper.inputText, helper.inputPassword
+@base(title = "Login"){
+<div class = "container-field">
+    <div class="text-center"><h1><strong> Log into your account!</strong></h1></div>
+    <br><br>
+
+    <div class = "row">
+
+        <div class = "col-md-4 col-md-offset-4">
+            @helper.form(action = routes.HomeController.login_post()) {
+                @inputText(loginForm("name"), '_label -> "", 'placeholder -> "Username", 'class -> "form-control")
+                @inputPassword(loginForm("password"), '_label -> "", 'placeholder -> "Password", 'class -> "form-control")
+                <div class="text-center">
+                    <button type="submit" class="btn btn-link">&nbsp Login &nbsp</button>
+                </div>
+            }
+
+
+
+        </div>
+
+    </div>
+
+</div>
+}

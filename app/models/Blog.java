@@ -1,17 +1,21 @@
 package models;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormatter;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 
-//telling hibernate "hey this is an entity and save it into Blog_table)
 @Entity
 @Table(name = "Blog_table")
 public class Blog {
 
-    //id field which isn't nullable, saved into column named id, and the data is
-    //created via incrementation of the highest primary key
+
     @Id
     @NotNull
     @Column(name="id")
@@ -19,43 +23,98 @@ public class Blog {
     @GenericGenerator(name = "incrementator", strategy = "increment" )
     private int id;
 
-    //getters and setters
+    @Column(name = "blog_title")
+    private String blog_title;
+
+    @Column(name = "dateTime")
+    private LocalDateTime creation_date = LocalDateTime.now();
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "User_id")
+    private User user;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Category_id")
+    private Category category;
+
+    @Column(name = "tags")
+    private String tags;
+
+    @OneToMany(
+            mappedBy = "blog",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<BlogPost> blogPosts = new ArrayList<>();
+
+    public void addBlogPost(BlogPost blogPost){
+        blogPosts.add(blogPost);
+        blogPost.setBlog(this);
+    }
+
+    public void removeBlogPost(BlogPost blogPost){
+        blogPosts.remove(blogPost);
+        blogPost.setBlog(null);
+    }
+
+    //getters,setters,constructors
+
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
     }
-
-    //blog_title field mapped to the column called blog_title
-    @Column(name = "blog_title")
-    private String blog_title;
-
-    //getters and setters
-    public void setBlog_title(String blog_title) {
-        this.blog_title = blog_title;
-    }
     public String getBlog_title() {
         return blog_title;
     }
-
-
-    //inicializing constructor
-    //we don't have to define an id of the object because the database will crate it for us
-    public Blog(String blog_title) {
+    public void setBlog_title(String blog_title) {
         this.blog_title = blog_title;
     }
-
-    //default constructor
-    public Blog() { }
-
-
-    //toString method for printing data easily to the console
+    public LocalDateTime getCreation_date() {
+        return creation_date;
+    }
+    public void setCreation_date(LocalDateTime creation_date) {
+        this.creation_date = creation_date;
+    }
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
+    public Category getCategory() {
+        return category;
+    }
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+    public String getTags() {
+        return tags;
+    }
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+    public List<BlogPost> getBlogPosts() {
+        return blogPosts;
+    }
+    public void setBlogPosts(List<BlogPost> blogPosts) {
+        this.blogPosts = blogPosts;
+    }
+    public Blog(String blog_title, String tags) {
+        this.blog_title = blog_title;
+        this.tags = tags;
+    }
+    public Blog() {
+    }
     @Override
     public String toString() {
         return "Blog{" +
                 "id=" + id +
                 ", blog_title='" + blog_title + '\'' +
+                ", creation_date=" + creation_date +
+                ", tags='" + tags + '\'' +
+                ", category" + category.getName() + '\'' +
                 '}';
     }
 }

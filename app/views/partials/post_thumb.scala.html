@@ -1,0 +1,21 @@
+@(post : BlogPost)
+<img src="{{ post.picture.url }}" alt="" >
+
+<h5 class="grey-text"> by @post.getUser.getName </h5>
+
+<h5 class="grey-text"> @post.getCreation_date.getDayOfMonth/@post.getCreation_date.getMonthOfYear/@post.getCreation_date.getYear at @post.getCreation_date.getHourOfDay:@post.getCreation_date.getMinuteOfHour </h5>
+
+<a href="#" class="thumb-link">
+    <h3> @post.getPost_title </h3>
+</a>
+
+<p class="padding-bottom-20">&nbsp;@post.getPost_text </p>
+
+<div class="tags-area">
+        @for(tag <- post.getTags.split(",") ) {
+            <a href="#" class="btn-link">@tag</a>
+        }
+</div>
+<br>
+
+<a href="#" class="btn-link">Continue Reading...</a>

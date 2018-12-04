@@ -1,23 +1,16 @@
-<!-- persistence.xml is the configuration file for hibernate-->
-
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <!-- with the persistence unit we create the entitymanagerfactor -->
+
     <persistence-unit name="defaultPersistenceUnit">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <non-jta-data-source>DefaultDS</non-jta-data-source>
         <properties>
-            <!--hibernate dialect, the language hibernate uses to "speak" to the DB-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-            <!--if set to update, hibernate will append data to tables, if set to crate it will
-            drop existing tables and create a new one to put the element into-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <!-- driver connection for the database -->
             <property name="hibernate.connection.driver_class" value="org.mysql.JDBC" />
-            <!-- hibernate will print the code it generates into the console -->
-            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.show_sql" value="false"/>
         </properties>
     </persistence-unit>
 

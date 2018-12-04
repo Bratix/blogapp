@@ -1,0 +1,28 @@
+@(blogForm: Form[Blog],categories : Seq[Category])
+@import helper.inputText, helper.textarea, helper.select, helper.CSRF
+@base(title = "Create a blog") {
+
+
+
+    <div class = "container-field">
+        <div class="text-center"><h1><strong>Crate your blog and let the fun begin!</strong></h1></div>
+        <br><br>
+        <div class = "row">
+
+            <div class = "col-md-4 col-md-offset-4">
+            @helper.form(action = helper.CSRF(routes.BlogController.save_Blog())) {
+                @inputText(blogForm("blog_title"), '_label -> "", 'placeholder -> "Your blog title", 'class -> "form-control")
+                @inputText(blogForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")
+                @select(field = blogForm("Category"), options = categories.map(category => category.getId.toString -> category.getName) )
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-link">&nbsp Create your blog &nbsp</button>
+                </div>
+
+            }
+            </div>
+
+        </div>
+
+    </div>
+}

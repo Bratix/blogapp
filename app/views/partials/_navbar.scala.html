@@ -1,0 +1,44 @@
+@(name : String)
+<nav class="navbar navbar-dark bg-primary">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar-brand">
+                <span> &nbsp; Blogo</span>
+            </div>
+
+            <div class="page-links col-md-2">
+                <a href="@routes.HomeController.index()">  Home </a>
+                <a href=#> Categories </a>
+            </div>
+
+            <div class="col-md-3">
+                <form action=# method="GET" class="search-form">
+                <input type="text" name="search" placeholder=" Search" class="search-input">
+                    <button type="submit" class="btn loop-icon"><span><i class="glyphicon glyphicon-search"></i></span></button>
+                </form>
+            </div>
+
+                <div class="login-area col-md-2 navbar-right">
+
+
+
+
+
+                    @if(name == null){
+                        <a href="@routes.HomeController.login_get()">Sing in</a>
+                        <span class="separator"> | </span>
+                        <a href=#>Sing up</a>
+                    }else{
+                        <a href="">@name</a>
+                        <span class="separator"> | </span>
+                        <a href="@routes.HomeController.logout()">Logout</a>
+                    }
+
+
+                </div>
+
+        </div>
+    </div>
+
+</nav>
