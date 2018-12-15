@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Amar/Desktop/javaplay/blogapp/conf/routes
-// @DATE:Tue Dec 11 00:57:20 CET 2018
+// @DATE:Sat Dec 15 22:31:42 CET 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
 
-  // @LINE:65
+  // @LINE:76
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:65
+    // @LINE:76
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -39,7 +39,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:6
+    // @LINE:10
     def login_get: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.login_get",
       """
@@ -49,7 +49,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:53
+    // @LINE:64
     def tag_search: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.tag_search",
       """
@@ -59,7 +59,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:7
+    // @LINE:11
     def login_post: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.login_post",
       """
@@ -69,7 +69,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:7
+    def register_post: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.register_post",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
+        }
+      """
+    )
+  
+    // @LINE:20
     def blog_detail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.blog_detail",
       """
@@ -79,7 +89,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:14
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.logout",
       """
@@ -89,7 +99,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:47
+    // @LINE:58
     def category_detail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.category_detail",
       """
@@ -99,7 +109,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:56
+    // @LINE:6
+    def register_get: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.register_get",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
+        }
+      """
+    )
+  
+    // @LINE:67
     def likes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.likes",
       """
@@ -109,7 +129,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:13
+    // @LINE:17
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.index",
       """
@@ -119,7 +139,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:30
+    // @LINE:34
     def blogpost_detail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.blogpost_detail",
       """
@@ -129,7 +149,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:50
+    // @LINE:61
     def category_posts: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.category_posts",
       """
@@ -141,7 +161,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:33
+  // @LINE:37
   class ReverseBlogPostController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -149,7 +169,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:41
+    // @LINE:45
     def blogpost_delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogPostController.blogpost_delete",
       """
@@ -159,7 +179,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:34
+    // @LINE:38
     def blogpost_save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogPostController.blogpost_save",
       """
@@ -169,7 +189,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:38
+    // @LINE:42
     def save_blogpost_update: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogPostController.save_blogpost_update",
       """
@@ -179,7 +199,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:41
     def update_blogpost: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogPostController.update_blogpost",
       """
@@ -189,7 +209,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:37
     def blogpost_create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogPostController.blogpost_create",
       """
@@ -201,7 +221,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:19
+  // @LINE:23
   class ReverseBlogController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -209,7 +229,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:23
     def create_Blog: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogController.create_Blog",
       """
@@ -219,7 +239,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:26
+    // @LINE:27
     def update_blog: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogController.update_blog",
       """
@@ -229,7 +249,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
+    // @LINE:31
     def delete_blog: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogController.delete_blog",
       """
@@ -239,7 +259,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:24
     def save_Blog: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogController.save_Blog",
       """
@@ -249,7 +269,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:28
     def update_save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BlogController.update_save",
       """
@@ -261,7 +281,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:44
+  // @LINE:48
   class ReverseCommentController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -269,7 +289,37 @@ package controllers.javascript {
     }
 
   
-    // @LINE:44
+    // @LINE:51
+    def comment_update_get: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CommentController.comment_update_get",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "update/comment/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:52
+    def comment_update_post: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CommentController.comment_update_post",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "update/comment/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:55
+    def comment_delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CommentController.comment_delete",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "delete/comment/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:48
     def comment_save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CommentController.comment_save",
       """

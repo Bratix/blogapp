@@ -2,6 +2,10 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+#Register
+GET     /register                   controllers.HomeController.register_get
+POST    /register                   controllers.HomeController.register_post
+
 #Login page
 GET     /login                      controllers.HomeController.login_get
 POST    /login                      controllers.HomeController.login_post
@@ -19,12 +23,12 @@ GET     /blog/:id                   controllers.HomeController.blog_detail(id: I
 GET     /create/blog                controllers.BlogController.create_Blog
 POST    /create/blog                controllers.BlogController.save_Blog
 
-#Blog delete view
-POST    /delete/blog/:id            controllers.BlogController.delete_blog(id: Int)
-
 #Blog update view
 GET     /update/blog/:id            controllers.BlogController.update_blog(id: Int)
 POST    /update/blog/:id            controllers.BlogController.update_save(id: Int)
+
+#Blog delete view
+POST    /delete/blog/:id            controllers.BlogController.delete_blog(id: Int)
 
 #BlogPost detail view
 GET     /post/:id                   controllers.HomeController.blogpost_detail(id:Int)
@@ -43,17 +47,24 @@ POST    /delete/post/:id            controllers.BlogPostController.blogpost_dele
 #Comment create view
 POST    /create/comment/:id         controllers.CommentController.comment_save(id: Int)
 
+#Comment update view
+GET     /update/comment/:id         controllers.CommentController.comment_update_get(id : Int)
+POST    /update/comment/:id         controllers.CommentController.comment_update_post(id : Int)
+
+#Comment delete view
+POST    /delete/comment/:id         controllers.CommentController.comment_delete(id: Int)
+
 #Categories page
 GET     /categories                 controllers.HomeController.category_detail
 
-#Categories blogs
+#Search by categories
 GET     /categories/:id             controllers.HomeController.category_posts(id: Int)
 
 #Tag search
 GET     /search                     controllers.HomeController.tag_search
 
 #Like
-GET    /like/post/:id              controllers.HomeController.likes(id: Int)
+GET     /like/post/:id              controllers.HomeController.likes(id: Int)
 
 
 

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Amar/Desktop/javaplay/blogapp/conf/routes
-// @DATE:Tue Dec 11 00:57:20 CET 2018
+// @DATE:Sat Dec 15 22:31:42 CET 2018
 
 import play.api.mvc.Call
 
@@ -11,14 +11,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:65
+  // @LINE:76
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:65
+    // @LINE:76
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -33,61 +33,73 @@ package controllers {
     }
 
   
-    // @LINE:6
+    // @LINE:10
     def login_get(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "login")
     }
   
-    // @LINE:53
+    // @LINE:64
     def tag_search(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "search")
     }
   
-    // @LINE:7
+    // @LINE:11
     def login_post(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "login")
     }
   
-    // @LINE:16
+    // @LINE:7
+    def register_post(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "register")
+    }
+  
+    // @LINE:20
     def blog_detail(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "blog/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:10
+    // @LINE:14
     def logout(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "logout")
     }
   
-    // @LINE:47
+    // @LINE:58
     def category_detail(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "categories")
     }
   
-    // @LINE:56
+    // @LINE:6
+    def register_get(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "register")
+    }
+  
+    // @LINE:67
     def likes(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "like/post/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:13
+    // @LINE:17
     def index(): Call = {
       
       Call("GET", _prefix)
     }
   
-    // @LINE:30
+    // @LINE:34
     def blogpost_detail(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "post/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:50
+    // @LINE:61
     def category_posts(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "categories/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -95,38 +107,38 @@ package controllers {
   
   }
 
-  // @LINE:33
+  // @LINE:37
   class ReverseBlogPostController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:41
+    // @LINE:45
     def blogpost_delete(id:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "delete/post/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:34
+    // @LINE:38
     def blogpost_save(id:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "create/post/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:38
+    // @LINE:42
     def save_blogpost_update(id:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "update/post/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:37
+    // @LINE:41
     def update_blogpost(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "update/post/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:33
+    // @LINE:37
     def blogpost_create(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "create/post/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -134,38 +146,38 @@ package controllers {
   
   }
 
-  // @LINE:19
+  // @LINE:23
   class ReverseBlogController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:19
+    // @LINE:23
     def create_Blog(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "create/blog")
     }
   
-    // @LINE:26
+    // @LINE:27
     def update_blog(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "update/blog/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:23
+    // @LINE:31
     def delete_blog(id:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "delete/blog/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:20
+    // @LINE:24
     def save_Blog(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "create/blog")
     }
   
-    // @LINE:27
+    // @LINE:28
     def update_save(id:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "update/blog/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -173,14 +185,32 @@ package controllers {
   
   }
 
-  // @LINE:44
+  // @LINE:48
   class ReverseCommentController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:44
+    // @LINE:51
+    def comment_update_get(id:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "update/comment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
+    // @LINE:52
+    def comment_update_post(id:Int): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "update/comment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
+    // @LINE:55
+    def comment_delete(id:Int): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "delete/comment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
+    // @LINE:48
     def comment_save(id:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "create/comment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))

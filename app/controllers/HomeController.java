@@ -16,6 +16,7 @@ import play.mvc.Security;
 import scala.Int;
 import views.html.*;
 import views.html.login.login;
+import views.html.login.register;
 
 import javax.inject.Inject;
 import javax.naming.NamingException;
@@ -39,6 +40,28 @@ public class HomeController extends Controller {
     FormFactory formFactory;
 
 
+    public Result register_get(){
+        Form<User> registerForm = formFactory.form(User.class);
+        return ok(register.render(registerForm));
+    }
+
+    public Result register_post(){
+        Form<User> userForm = formFactory.form(User.class).bindFromRequest();
+        User user = userForm.get();
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+
+        entityManager.persist(user);
+
+        entityManager.getTransaction().commit();
+        entityManagerFactory.close();
+
+        session().clear();
+        session("name", user.getName());
+        return redirect(routes.HomeController.index());
+    }
 
     public Result login_get(){
         Form<Login> loginForm = formFactory.form(Login.class);

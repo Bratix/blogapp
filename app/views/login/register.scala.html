@@ -1,0 +1,26 @@
+@(registerForm: Form[User])
+@import helper.inputText,helper.inputPassword
+@base(title = "Registration"){
+    <div class = "container-field">
+        <div class="text-center"><h1><strong> Register!</strong></h1></div>
+        <br><br>
+
+        <div class = "row">
+
+            <div class = "col-md-4 col-md-offset-4">
+            @helper.form(action = helper.CSRF(routes.HomeController.register_post())){
+                @inputText(registerForm("name"), '_label -> "", 'placeholder -> "Enter username", 'class -> "form-control")
+                @inputPassword(registerForm("password"), '_label -> "", 'placeholder -> "Enter password", 'class -> "form-control")
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-link">&nbsp Register &nbsp</button>
+                </div>
+            }
+
+            </div>
+
+        </div>
+
+    </div>
+
+}

@@ -14,8 +14,12 @@
                 @if(comment.getUser.getName == session.get("name")){
                 <div class="container-fluid comment-buttons padding-bottom-10">
                     <div class="row">
-                        <button type="submit " class="btn-link btn-cupdate">Edit</button>
-                        <button type="submit" data-url="{% url 'blog:comment_delete' comment.id %}" class="btn-link btn-cdelete">Delete</button>
+                        @helper.form(action = helper.CSRF(routes.CommentController.comment_update_get(comment.getId))){
+                        <button type="submit" class="btn-link">Edit</button>
+                        }
+                        @helper.form(action = helper.CSRF(routes.CommentController.comment_delete(comment.getId))){
+                            <button type="submit" class="btn-link">Delete</button>
+                        }
                     </div>
                 </div>
                 }

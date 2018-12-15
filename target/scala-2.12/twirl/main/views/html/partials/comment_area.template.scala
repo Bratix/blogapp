@@ -46,29 +46,33 @@ Seq[Any](format.raw/*2.63*/("""
                 """),_display_(/*14.18*/if(comment.getUser.getName == session.get("name"))/*14.68*/{_display_(Seq[Any](format.raw/*14.69*/("""
                 """),format.raw/*15.17*/("""<div class="container-fluid comment-buttons padding-bottom-10">
                     <div class="row">
-                        <button type="submit " class="btn-link btn-cupdate">Edit</button>
-                        <button type="submit" data-url=""""),format.raw/*18.57*/("""{"""),format.raw/*18.58*/("""% url 'blog:comment_delete' comment.id %"""),format.raw/*18.98*/("""}"""),format.raw/*18.99*/("""" class="btn-link btn-cdelete">Delete</button>
-                    </div>
+                        """),_display_(/*17.26*/helper/*17.32*/.form(action = helper.CSRF(routes.CommentController.comment_update_get(comment.getId)))/*17.119*/{_display_(Seq[Any](format.raw/*17.120*/("""
+                        """),format.raw/*18.25*/("""<button type="submit" class="btn-link">Edit</button>
+                        """)))}),format.raw/*19.26*/("""
+                        """),_display_(/*20.26*/helper/*20.32*/.form(action = helper.CSRF(routes.CommentController.comment_delete(comment.getId)))/*20.115*/{_display_(Seq[Any](format.raw/*20.116*/("""
+                            """),format.raw/*21.29*/("""<button type="submit" class="btn-link">Delete</button>
+                        """)))}),format.raw/*22.26*/("""
+                    """),format.raw/*23.21*/("""</div>
                 </div>
-                """)))}),format.raw/*21.18*/("""
+                """)))}),format.raw/*25.18*/("""
 
-                """),format.raw/*28.25*/("""
-            """),format.raw/*29.13*/("""</div>
+                """),format.raw/*32.25*/("""
+            """),format.raw/*33.13*/("""</div>
         </li>
-    """)))}),format.raw/*31.6*/("""
-"""),format.raw/*32.1*/("""</ul>
+    """)))}),format.raw/*35.6*/("""
+"""),format.raw/*36.1*/("""</ul>
 
     <!-- New comment form -->
-<form action=""""),_display_(/*35.16*/helper/*35.22*/.CSRF(routes.CommentController.comment_save(id))),format.raw/*35.70*/("""" method="post" class="comment-form">
+<form action=""""),_display_(/*39.16*/helper/*39.22*/.CSRF(routes.CommentController.comment_save(id))),format.raw/*39.70*/("""" method="post" class="comment-form">
 
     <div class="text-center">
-        """),_display_(/*38.10*/helper/*38.16*/.textarea(commentForm("text"), '_label -> "", 'placeholder -> "Enter your comment here", 'class -> "form-control")),format.raw/*38.130*/("""
-        """),format.raw/*39.9*/("""<button type="submit" class="btn btn-link" id="comment-post">Post Comment</button>
+        """),_display_(/*42.10*/helper/*42.16*/.textarea(commentForm("text"), '_label -> "", 'placeholder -> "Enter your comment here", 'class -> "form-control")),format.raw/*42.130*/("""
+        """),format.raw/*43.9*/("""<button type="submit" class="btn btn-link" id="comment-post">Post Comment</button>
     </div>
 </form>
 
     <!-- Empty comment for jquery -->
-"""),format.raw/*64.8*/("""
+"""),format.raw/*68.8*/("""
 """))
       }
     }
@@ -85,11 +89,11 @@ Seq[Any](format.raw/*2.63*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 09 15:18:50 CET 2018
+                  DATE: Sat Dec 15 22:18:23 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/partials/comment_area.scala.html
-                  HASH: 5e8b8de58b0ac8e7a988c45a4b396fcecad44515
-                  MATRIX: 660->1|1018->26|1174->87|1202->89|1341->203|1380->227|1419->229|1455->239|1587->344|1603->351|1655->382|1684->384|1700->391|1754->423|1784->425|1801->432|1848->457|1878->458|1910->462|1927->469|1979->499|2009->501|2026->508|2081->541|2111->542|2180->584|2196->591|2233->607|2309->656|2325->663|2354->671|2406->696|2465->746|2504->747|2550->765|2829->1016|2858->1017|2926->1057|2955->1058|3103->1175|3151->1714|3193->1728|3251->1756|3280->1758|3362->1813|3377->1819|3446->1867|3554->1948|3569->1954|3705->2068|3742->2078|3915->3426
-                  LINES: 24->1|29->2|34->2|35->3|39->7|39->7|39->7|40->8|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|46->14|46->14|47->15|50->18|50->18|50->18|50->18|53->21|55->28|56->29|58->31|59->32|62->35|62->35|62->35|65->38|65->38|65->38|66->39|71->64
+                  HASH: 9f22b1ed9d8fb3196bcabd5c62ef7ef8b5a119f7
+                  MATRIX: 660->1|1018->26|1174->87|1202->89|1341->203|1380->227|1419->229|1455->239|1587->344|1603->351|1655->382|1684->384|1700->391|1754->423|1784->425|1801->432|1848->457|1878->458|1910->462|1927->469|1979->499|2009->501|2026->508|2081->541|2111->542|2180->584|2196->591|2233->607|2309->656|2325->663|2354->671|2406->696|2465->746|2504->747|2550->765|2706->894|2721->900|2818->987|2858->988|2912->1014|3022->1093|3076->1120|3091->1126|3184->1209|3224->1210|3282->1240|3394->1321|3444->1343|3524->1392|3572->1931|3614->1945|3672->1973|3701->1975|3783->2030|3798->2036|3867->2084|3975->2165|3990->2171|4126->2285|4163->2295|4336->3643
+                  LINES: 24->1|29->2|34->2|35->3|39->7|39->7|39->7|40->8|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|46->14|46->14|47->15|49->17|49->17|49->17|49->17|50->18|51->19|52->20|52->20|52->20|52->20|53->21|54->22|55->23|57->25|59->32|60->33|62->35|63->36|66->39|66->39|66->39|69->42|69->42|69->42|70->43|75->68
                   -- GENERATED --
               */
           

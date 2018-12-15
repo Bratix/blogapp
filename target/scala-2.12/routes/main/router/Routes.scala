@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Amar/Desktop/javaplay/blogapp/conf/routes
-// @DATE:Tue Dec 11 00:57:20 CET 2018
+// @DATE:Sat Dec 15 22:31:42 CET 2018
 
 package router
 
@@ -16,13 +16,13 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   HomeController_0: controllers.HomeController,
-  // @LINE:19
+  // @LINE:23
   BlogController_3: controllers.BlogController,
-  // @LINE:33
+  // @LINE:37
   BlogPostController_1: controllers.BlogPostController,
-  // @LINE:44
+  // @LINE:48
   CommentController_2: controllers.CommentController,
-  // @LINE:65
+  // @LINE:76
   Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -31,13 +31,13 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     HomeController_0: controllers.HomeController,
-    // @LINE:19
+    // @LINE:23
     BlogController_3: controllers.BlogController,
-    // @LINE:33
+    // @LINE:37
     BlogPostController_1: controllers.BlogPostController,
-    // @LINE:44
+    // @LINE:48
     CommentController_2: controllers.CommentController,
-    // @LINE:65
+    // @LINE:76
     Assets_4: controllers.Assets
   ) = this(errorHandler, HomeController_0, BlogController_3, BlogPostController_1, CommentController_2, Assets_4, "/")
 
@@ -51,6 +51,8 @@ class Routes(
   }
 
   def documentation = List(
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """controllers.HomeController.register_get"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """controllers.HomeController.register_post"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.HomeController.login_get"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.HomeController.login_post"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.HomeController.logout"""),
@@ -58,9 +60,9 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """blog/""" + "$" + """id<[^/]+>""", """controllers.HomeController.blog_detail(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/blog""", """controllers.BlogController.create_Blog"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/blog""", """controllers.BlogController.save_Blog"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.delete_blog(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.update_blog(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.update_save(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.delete_blog(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """post/""" + "$" + """id<[^/]+>""", """controllers.HomeController.blogpost_detail(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_create(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_save(id:Int)"""),
@@ -68,6 +70,9 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.save_blogpost_update(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_delete(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_save(id:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_update_get(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_update_post(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_delete(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """categories""", """controllers.HomeController.category_detail"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """categories/""" + "$" + """id<[^/]+>""", """controllers.HomeController.category_posts(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.HomeController.tag_search"""),
@@ -81,10 +86,46 @@ class Routes(
 
 
   // @LINE:6
-  private[this] lazy val controllers_HomeController_login_get0_route = Route("GET",
+  private[this] lazy val controllers_HomeController_register_get0_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register")))
+  )
+  private[this] lazy val controllers_HomeController_register_get0_invoker = createInvoker(
+    HomeController_0.register_get,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "register_get",
+      Nil,
+      "GET",
+      this.prefix + """register""",
+      """Register""",
+      Seq()
+    )
+  )
+
+  // @LINE:7
+  private[this] lazy val controllers_HomeController_register_post1_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register")))
+  )
+  private[this] lazy val controllers_HomeController_register_post1_invoker = createInvoker(
+    HomeController_0.register_post,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "register_post",
+      Nil,
+      "POST",
+      this.prefix + """register""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:10
+  private[this] lazy val controllers_HomeController_login_get2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
-  private[this] lazy val controllers_HomeController_login_get0_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_login_get2_invoker = createInvoker(
     HomeController_0.login_get,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -98,11 +139,11 @@ class Routes(
     )
   )
 
-  // @LINE:7
-  private[this] lazy val controllers_HomeController_login_post1_route = Route("POST",
+  // @LINE:11
+  private[this] lazy val controllers_HomeController_login_post3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
-  private[this] lazy val controllers_HomeController_login_post1_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_login_post3_invoker = createInvoker(
     HomeController_0.login_post,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -116,11 +157,11 @@ class Routes(
     )
   )
 
-  // @LINE:10
-  private[this] lazy val controllers_HomeController_logout2_route = Route("GET",
+  // @LINE:14
+  private[this] lazy val controllers_HomeController_logout4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_HomeController_logout2_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_logout4_invoker = createInvoker(
     HomeController_0.logout,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -134,11 +175,11 @@ class Routes(
     )
   )
 
-  // @LINE:13
-  private[this] lazy val controllers_HomeController_index3_route = Route("GET",
+  // @LINE:17
+  private[this] lazy val controllers_HomeController_index5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
-  private[this] lazy val controllers_HomeController_index3_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_index5_invoker = createInvoker(
     HomeController_0.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -152,11 +193,11 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_HomeController_blog_detail4_route = Route("GET",
+  // @LINE:20
+  private[this] lazy val controllers_HomeController_blog_detail6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("blog/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_blog_detail4_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_blog_detail6_invoker = createInvoker(
     HomeController_0.blog_detail(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -170,11 +211,11 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_BlogController_create_Blog5_route = Route("GET",
+  // @LINE:23
+  private[this] lazy val controllers_BlogController_create_Blog7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/blog")))
   )
-  private[this] lazy val controllers_BlogController_create_Blog5_invoker = createInvoker(
+  private[this] lazy val controllers_BlogController_create_Blog7_invoker = createInvoker(
     BlogController_3.create_Blog,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -188,11 +229,11 @@ class Routes(
     )
   )
 
-  // @LINE:20
-  private[this] lazy val controllers_BlogController_save_Blog6_route = Route("POST",
+  // @LINE:24
+  private[this] lazy val controllers_BlogController_save_Blog8_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/blog")))
   )
-  private[this] lazy val controllers_BlogController_save_Blog6_invoker = createInvoker(
+  private[this] lazy val controllers_BlogController_save_Blog8_invoker = createInvoker(
     BlogController_3.save_Blog,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -206,29 +247,11 @@ class Routes(
     )
   )
 
-  // @LINE:23
-  private[this] lazy val controllers_BlogController_delete_blog7_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete/blog/"), DynamicPart("id", """[^/]+""",true)))
-  )
-  private[this] lazy val controllers_BlogController_delete_blog7_invoker = createInvoker(
-    BlogController_3.delete_blog(fakeValue[Int]),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.BlogController",
-      "delete_blog",
-      Seq(classOf[Int]),
-      "POST",
-      this.prefix + """delete/blog/""" + "$" + """id<[^/]+>""",
-      """Blog delete view""",
-      Seq()
-    )
-  )
-
-  // @LINE:26
-  private[this] lazy val controllers_BlogController_update_blog8_route = Route("GET",
+  // @LINE:27
+  private[this] lazy val controllers_BlogController_update_blog9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/blog/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogController_update_blog8_invoker = createInvoker(
+  private[this] lazy val controllers_BlogController_update_blog9_invoker = createInvoker(
     BlogController_3.update_blog(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -242,11 +265,11 @@ class Routes(
     )
   )
 
-  // @LINE:27
-  private[this] lazy val controllers_BlogController_update_save9_route = Route("POST",
+  // @LINE:28
+  private[this] lazy val controllers_BlogController_update_save10_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/blog/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogController_update_save9_invoker = createInvoker(
+  private[this] lazy val controllers_BlogController_update_save10_invoker = createInvoker(
     BlogController_3.update_save(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -260,11 +283,29 @@ class Routes(
     )
   )
 
-  // @LINE:30
-  private[this] lazy val controllers_HomeController_blogpost_detail10_route = Route("GET",
+  // @LINE:31
+  private[this] lazy val controllers_BlogController_delete_blog11_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete/blog/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_BlogController_delete_blog11_invoker = createInvoker(
+    BlogController_3.delete_blog(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.BlogController",
+      "delete_blog",
+      Seq(classOf[Int]),
+      "POST",
+      this.prefix + """delete/blog/""" + "$" + """id<[^/]+>""",
+      """Blog delete view""",
+      Seq()
+    )
+  )
+
+  // @LINE:34
+  private[this] lazy val controllers_HomeController_blogpost_detail12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_blogpost_detail10_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_blogpost_detail12_invoker = createInvoker(
     HomeController_0.blogpost_detail(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -278,11 +319,11 @@ class Routes(
     )
   )
 
-  // @LINE:33
-  private[this] lazy val controllers_BlogPostController_blogpost_create11_route = Route("GET",
+  // @LINE:37
+  private[this] lazy val controllers_BlogPostController_blogpost_create13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_blogpost_create11_invoker = createInvoker(
+  private[this] lazy val controllers_BlogPostController_blogpost_create13_invoker = createInvoker(
     BlogPostController_1.blogpost_create(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -296,11 +337,11 @@ class Routes(
     )
   )
 
-  // @LINE:34
-  private[this] lazy val controllers_BlogPostController_blogpost_save12_route = Route("POST",
+  // @LINE:38
+  private[this] lazy val controllers_BlogPostController_blogpost_save14_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_blogpost_save12_invoker = createInvoker(
+  private[this] lazy val controllers_BlogPostController_blogpost_save14_invoker = createInvoker(
     BlogPostController_1.blogpost_save(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -314,11 +355,11 @@ class Routes(
     )
   )
 
-  // @LINE:37
-  private[this] lazy val controllers_BlogPostController_update_blogpost13_route = Route("GET",
+  // @LINE:41
+  private[this] lazy val controllers_BlogPostController_update_blogpost15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_update_blogpost13_invoker = createInvoker(
+  private[this] lazy val controllers_BlogPostController_update_blogpost15_invoker = createInvoker(
     BlogPostController_1.update_blogpost(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -332,11 +373,11 @@ class Routes(
     )
   )
 
-  // @LINE:38
-  private[this] lazy val controllers_BlogPostController_save_blogpost_update14_route = Route("POST",
+  // @LINE:42
+  private[this] lazy val controllers_BlogPostController_save_blogpost_update16_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_save_blogpost_update14_invoker = createInvoker(
+  private[this] lazy val controllers_BlogPostController_save_blogpost_update16_invoker = createInvoker(
     BlogPostController_1.save_blogpost_update(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -350,11 +391,11 @@ class Routes(
     )
   )
 
-  // @LINE:41
-  private[this] lazy val controllers_BlogPostController_blogpost_delete15_route = Route("POST",
+  // @LINE:45
+  private[this] lazy val controllers_BlogPostController_blogpost_delete17_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_blogpost_delete15_invoker = createInvoker(
+  private[this] lazy val controllers_BlogPostController_blogpost_delete17_invoker = createInvoker(
     BlogPostController_1.blogpost_delete(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -368,11 +409,11 @@ class Routes(
     )
   )
 
-  // @LINE:44
-  private[this] lazy val controllers_CommentController_comment_save16_route = Route("POST",
+  // @LINE:48
+  private[this] lazy val controllers_CommentController_comment_save18_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/comment/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CommentController_comment_save16_invoker = createInvoker(
+  private[this] lazy val controllers_CommentController_comment_save18_invoker = createInvoker(
     CommentController_2.comment_save(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -386,11 +427,65 @@ class Routes(
     )
   )
 
-  // @LINE:47
-  private[this] lazy val controllers_HomeController_category_detail17_route = Route("GET",
+  // @LINE:51
+  private[this] lazy val controllers_CommentController_comment_update_get19_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/comment/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_CommentController_comment_update_get19_invoker = createInvoker(
+    CommentController_2.comment_update_get(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CommentController",
+      "comment_update_get",
+      Seq(classOf[Int]),
+      "GET",
+      this.prefix + """update/comment/""" + "$" + """id<[^/]+>""",
+      """Comment update view""",
+      Seq()
+    )
+  )
+
+  // @LINE:52
+  private[this] lazy val controllers_CommentController_comment_update_post20_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/comment/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_CommentController_comment_update_post20_invoker = createInvoker(
+    CommentController_2.comment_update_post(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CommentController",
+      "comment_update_post",
+      Seq(classOf[Int]),
+      "POST",
+      this.prefix + """update/comment/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:55
+  private[this] lazy val controllers_CommentController_comment_delete21_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete/comment/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_CommentController_comment_delete21_invoker = createInvoker(
+    CommentController_2.comment_delete(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CommentController",
+      "comment_delete",
+      Seq(classOf[Int]),
+      "POST",
+      this.prefix + """delete/comment/""" + "$" + """id<[^/]+>""",
+      """Comment delete view""",
+      Seq()
+    )
+  )
+
+  // @LINE:58
+  private[this] lazy val controllers_HomeController_category_detail22_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("categories")))
   )
-  private[this] lazy val controllers_HomeController_category_detail17_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_category_detail22_invoker = createInvoker(
     HomeController_0.category_detail,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -404,11 +499,11 @@ class Routes(
     )
   )
 
-  // @LINE:50
-  private[this] lazy val controllers_HomeController_category_posts18_route = Route("GET",
+  // @LINE:61
+  private[this] lazy val controllers_HomeController_category_posts23_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("categories/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_category_posts18_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_category_posts23_invoker = createInvoker(
     HomeController_0.category_posts(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -417,16 +512,16 @@ class Routes(
       Seq(classOf[Int]),
       "GET",
       this.prefix + """categories/""" + "$" + """id<[^/]+>""",
-      """Categories blogs""",
+      """Search by categories""",
       Seq()
     )
   )
 
-  // @LINE:53
-  private[this] lazy val controllers_HomeController_tag_search19_route = Route("GET",
+  // @LINE:64
+  private[this] lazy val controllers_HomeController_tag_search24_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("search")))
   )
-  private[this] lazy val controllers_HomeController_tag_search19_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_tag_search24_invoker = createInvoker(
     HomeController_0.tag_search,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -440,11 +535,11 @@ class Routes(
     )
   )
 
-  // @LINE:56
-  private[this] lazy val controllers_HomeController_likes20_route = Route("GET",
+  // @LINE:67
+  private[this] lazy val controllers_HomeController_likes25_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("like/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_likes20_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_likes25_invoker = createInvoker(
     HomeController_0.likes(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -458,11 +553,11 @@ class Routes(
     )
   )
 
-  // @LINE:65
-  private[this] lazy val controllers_Assets_versioned21_route = Route("GET",
+  // @LINE:76
+  private[this] lazy val controllers_Assets_versioned26_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned21_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned26_invoker = createInvoker(
     Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -480,135 +575,165 @@ class Routes(
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
-    case controllers_HomeController_login_get0_route(params@_) =>
+    case controllers_HomeController_register_get0_route(params@_) =>
       call { 
-        controllers_HomeController_login_get0_invoker.call(HomeController_0.login_get)
+        controllers_HomeController_register_get0_invoker.call(HomeController_0.register_get)
       }
   
     // @LINE:7
-    case controllers_HomeController_login_post1_route(params@_) =>
+    case controllers_HomeController_register_post1_route(params@_) =>
       call { 
-        controllers_HomeController_login_post1_invoker.call(HomeController_0.login_post)
+        controllers_HomeController_register_post1_invoker.call(HomeController_0.register_post)
       }
   
     // @LINE:10
-    case controllers_HomeController_logout2_route(params@_) =>
+    case controllers_HomeController_login_get2_route(params@_) =>
       call { 
-        controllers_HomeController_logout2_invoker.call(HomeController_0.logout)
+        controllers_HomeController_login_get2_invoker.call(HomeController_0.login_get)
       }
   
-    // @LINE:13
-    case controllers_HomeController_index3_route(params@_) =>
+    // @LINE:11
+    case controllers_HomeController_login_post3_route(params@_) =>
       call { 
-        controllers_HomeController_index3_invoker.call(HomeController_0.index)
+        controllers_HomeController_login_post3_invoker.call(HomeController_0.login_post)
       }
   
-    // @LINE:16
-    case controllers_HomeController_blog_detail4_route(params@_) =>
-      call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_HomeController_blog_detail4_invoker.call(HomeController_0.blog_detail(id))
+    // @LINE:14
+    case controllers_HomeController_logout4_route(params@_) =>
+      call { 
+        controllers_HomeController_logout4_invoker.call(HomeController_0.logout)
       }
   
-    // @LINE:19
-    case controllers_BlogController_create_Blog5_route(params@_) =>
+    // @LINE:17
+    case controllers_HomeController_index5_route(params@_) =>
       call { 
-        controllers_BlogController_create_Blog5_invoker.call(BlogController_3.create_Blog)
+        controllers_HomeController_index5_invoker.call(HomeController_0.index)
       }
   
     // @LINE:20
-    case controllers_BlogController_save_Blog6_route(params@_) =>
-      call { 
-        controllers_BlogController_save_Blog6_invoker.call(BlogController_3.save_Blog)
+    case controllers_HomeController_blog_detail6_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_HomeController_blog_detail6_invoker.call(HomeController_0.blog_detail(id))
       }
   
     // @LINE:23
-    case controllers_BlogController_delete_blog7_route(params@_) =>
-      call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogController_delete_blog7_invoker.call(BlogController_3.delete_blog(id))
+    case controllers_BlogController_create_Blog7_route(params@_) =>
+      call { 
+        controllers_BlogController_create_Blog7_invoker.call(BlogController_3.create_Blog)
       }
   
-    // @LINE:26
-    case controllers_BlogController_update_blog8_route(params@_) =>
-      call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogController_update_blog8_invoker.call(BlogController_3.update_blog(id))
+    // @LINE:24
+    case controllers_BlogController_save_Blog8_route(params@_) =>
+      call { 
+        controllers_BlogController_save_Blog8_invoker.call(BlogController_3.save_Blog)
       }
   
     // @LINE:27
-    case controllers_BlogController_update_save9_route(params@_) =>
+    case controllers_BlogController_update_blog9_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogController_update_save9_invoker.call(BlogController_3.update_save(id))
+        controllers_BlogController_update_blog9_invoker.call(BlogController_3.update_blog(id))
       }
   
-    // @LINE:30
-    case controllers_HomeController_blogpost_detail10_route(params@_) =>
+    // @LINE:28
+    case controllers_BlogController_update_save10_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_HomeController_blogpost_detail10_invoker.call(HomeController_0.blogpost_detail(id))
+        controllers_BlogController_update_save10_invoker.call(BlogController_3.update_save(id))
       }
   
-    // @LINE:33
-    case controllers_BlogPostController_blogpost_create11_route(params@_) =>
+    // @LINE:31
+    case controllers_BlogController_delete_blog11_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_blogpost_create11_invoker.call(BlogPostController_1.blogpost_create(id))
+        controllers_BlogController_delete_blog11_invoker.call(BlogController_3.delete_blog(id))
       }
   
     // @LINE:34
-    case controllers_BlogPostController_blogpost_save12_route(params@_) =>
+    case controllers_HomeController_blogpost_detail12_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_blogpost_save12_invoker.call(BlogPostController_1.blogpost_save(id))
+        controllers_HomeController_blogpost_detail12_invoker.call(HomeController_0.blogpost_detail(id))
       }
   
     // @LINE:37
-    case controllers_BlogPostController_update_blogpost13_route(params@_) =>
+    case controllers_BlogPostController_blogpost_create13_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_update_blogpost13_invoker.call(BlogPostController_1.update_blogpost(id))
+        controllers_BlogPostController_blogpost_create13_invoker.call(BlogPostController_1.blogpost_create(id))
       }
   
     // @LINE:38
-    case controllers_BlogPostController_save_blogpost_update14_route(params@_) =>
+    case controllers_BlogPostController_blogpost_save14_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_save_blogpost_update14_invoker.call(BlogPostController_1.save_blogpost_update(id))
+        controllers_BlogPostController_blogpost_save14_invoker.call(BlogPostController_1.blogpost_save(id))
       }
   
     // @LINE:41
-    case controllers_BlogPostController_blogpost_delete15_route(params@_) =>
+    case controllers_BlogPostController_update_blogpost15_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_blogpost_delete15_invoker.call(BlogPostController_1.blogpost_delete(id))
+        controllers_BlogPostController_update_blogpost15_invoker.call(BlogPostController_1.update_blogpost(id))
       }
   
-    // @LINE:44
-    case controllers_CommentController_comment_save16_route(params@_) =>
+    // @LINE:42
+    case controllers_BlogPostController_save_blogpost_update16_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_CommentController_comment_save16_invoker.call(CommentController_2.comment_save(id))
+        controllers_BlogPostController_save_blogpost_update16_invoker.call(BlogPostController_1.save_blogpost_update(id))
       }
   
-    // @LINE:47
-    case controllers_HomeController_category_detail17_route(params@_) =>
+    // @LINE:45
+    case controllers_BlogPostController_blogpost_delete17_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_BlogPostController_blogpost_delete17_invoker.call(BlogPostController_1.blogpost_delete(id))
+      }
+  
+    // @LINE:48
+    case controllers_CommentController_comment_save18_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_CommentController_comment_save18_invoker.call(CommentController_2.comment_save(id))
+      }
+  
+    // @LINE:51
+    case controllers_CommentController_comment_update_get19_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_CommentController_comment_update_get19_invoker.call(CommentController_2.comment_update_get(id))
+      }
+  
+    // @LINE:52
+    case controllers_CommentController_comment_update_post20_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_CommentController_comment_update_post20_invoker.call(CommentController_2.comment_update_post(id))
+      }
+  
+    // @LINE:55
+    case controllers_CommentController_comment_delete21_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_CommentController_comment_delete21_invoker.call(CommentController_2.comment_delete(id))
+      }
+  
+    // @LINE:58
+    case controllers_HomeController_category_detail22_route(params@_) =>
       call { 
-        controllers_HomeController_category_detail17_invoker.call(HomeController_0.category_detail)
+        controllers_HomeController_category_detail22_invoker.call(HomeController_0.category_detail)
       }
   
-    // @LINE:50
-    case controllers_HomeController_category_posts18_route(params@_) =>
+    // @LINE:61
+    case controllers_HomeController_category_posts23_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_HomeController_category_posts18_invoker.call(HomeController_0.category_posts(id))
+        controllers_HomeController_category_posts23_invoker.call(HomeController_0.category_posts(id))
       }
   
-    // @LINE:53
-    case controllers_HomeController_tag_search19_route(params@_) =>
+    // @LINE:64
+    case controllers_HomeController_tag_search24_route(params@_) =>
       call { 
-        controllers_HomeController_tag_search19_invoker.call(HomeController_0.tag_search)
+        controllers_HomeController_tag_search24_invoker.call(HomeController_0.tag_search)
       }
   
-    // @LINE:56
-    case controllers_HomeController_likes20_route(params@_) =>
+    // @LINE:67
+    case controllers_HomeController_likes25_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_HomeController_likes20_invoker.call(HomeController_0.likes(id))
+        controllers_HomeController_likes25_invoker.call(HomeController_0.likes(id))
       }
   
-    // @LINE:65
-    case controllers_Assets_versioned21_route(params@_) =>
+    // @LINE:76
+    case controllers_Assets_versioned26_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned21_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned26_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }
