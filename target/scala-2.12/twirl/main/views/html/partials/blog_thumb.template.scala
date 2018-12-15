@@ -31,10 +31,12 @@ object blog_thumb extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api
 
 
 Seq[Any](format.raw/*1.15*/("""
-"""),format.raw/*2.1*/("""<div class="blog-content col-md-offset-2 col-md-3">
-    <a href="#"> <h3>"""),_display_(/*3.23*/blog/*3.27*/.getBlog_title),format.raw/*3.41*/("""</h3> </a>
-    <h3 class="lightgrey-text"> by """),_display_(/*4.37*/blog/*4.41*/.getUser.getName),format.raw/*4.57*/("""</h3>
-    <h4 class="lightgrey-text">"""),_display_(/*5.33*/blog/*5.37*/.getCreation_date.getDayOfMonth),format.raw/*5.68*/("""/"""),_display_(/*5.70*/blog/*5.74*/.getCreation_date.getMonthOfYear),format.raw/*5.106*/("""/"""),_display_(/*5.108*/blog/*5.112*/.getCreation_date.getYear),format.raw/*5.137*/(""" """),format.raw/*5.138*/("""at """),_display_(/*5.142*/blog/*5.146*/.getCreation_date.getHourOfDay),format.raw/*5.176*/(""":"""),_display_(/*5.178*/blog/*5.182*/.getCreation_date.getMinuteOfHour),format.raw/*5.215*/(""" """),format.raw/*5.216*/("""</h4>
+"""),format.raw/*4.9*/("""
+
+"""),format.raw/*6.1*/("""<div class="blog-content col-md-offset-2 col-md-3">
+    <a href=""""),_display_(/*7.15*/routes/*7.21*/.HomeController.blog_detail(blog.getId)),format.raw/*7.60*/(""""> <h3>"""),_display_(/*7.68*/blog/*7.72*/.getBlog_title),format.raw/*7.86*/("""</h3> </a>
+    <h3 class="lightgrey-text"> by """),_display_(/*8.37*/blog/*8.41*/.getUser.getName),format.raw/*8.57*/("""</h3>
+    <h4 class="lightgrey-text">"""),_display_(/*9.33*/blog/*9.37*/.getCreation_date.getDayOfMonth),format.raw/*9.68*/("""/"""),_display_(/*9.70*/blog/*9.74*/.getCreation_date.getMonthOfYear),format.raw/*9.106*/("""/"""),_display_(/*9.108*/blog/*9.112*/.getCreation_date.getYear),format.raw/*9.137*/(""" """),format.raw/*9.138*/("""at """),_display_(/*9.142*/blog/*9.146*/.getCreation_date.getHourOfDay),format.raw/*9.176*/(""":"""),_display_(/*9.178*/blog/*9.182*/.getCreation_date.getMinuteOfHour),format.raw/*9.215*/(""" """),format.raw/*9.216*/("""</h4>
 </div>"""))
       }
     }
@@ -51,11 +53,11 @@ Seq[Any](format.raw/*1.15*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 03 00:27:34 CET 2018
+                  DATE: Fri Dec 07 23:40:28 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/partials/blog_thumb.scala.html
-                  HASH: 78ee39296f1416a5cc33760d08057fa1fb1f3e59
-                  MATRIX: 960->1|1068->14|1096->16|1197->91|1209->95|1243->109|1317->157|1329->161|1365->177|1430->216|1442->220|1493->251|1521->253|1533->257|1586->289|1615->291|1628->295|1674->320|1703->321|1734->325|1747->329|1798->359|1827->361|1840->365|1894->398|1923->399
-                  LINES: 28->1|33->1|34->2|35->3|35->3|35->3|36->4|36->4|36->4|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5|37->5
+                  HASH: aefd5de9039cea035b2e7e11beea458c216e9b59
+                  MATRIX: 960->1|1068->14|1096->183|1126->187|1219->254|1233->260|1292->299|1326->307|1338->311|1372->325|1446->373|1458->377|1494->393|1559->432|1571->436|1622->467|1650->469|1662->473|1715->505|1744->507|1757->511|1803->536|1832->537|1863->541|1876->545|1927->575|1956->577|1969->581|2023->614|2052->615
+                  LINES: 28->1|33->1|34->4|36->6|37->7|37->7|37->7|37->7|37->7|37->7|38->8|38->8|38->8|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9|39->9
                   -- GENERATED --
               */
           

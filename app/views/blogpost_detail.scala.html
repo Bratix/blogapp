@@ -1,0 +1,26 @@
+@import partials.post_content, partials.blogpost_actionbuttons
+@(post : BlogPost, commentForm : Form[Comment], user: User)
+@base(title = "Post"){
+    <div class="row">
+        <section class="col-md-6 col-md-offset-1">
+            <div class="post-thumb pl-25">
+                @post_content(post,commentForm, user)
+            </div>
+
+        </section>
+
+        <section class="col-md-offset-2 col-md-2">
+
+            <h1 class="section-title text-center">About me</h1>
+
+            <div class="post-thumb text-center">
+                <h3>@post.getUser.getName</h3>
+            </div>
+            @if(session().get("name")== post.getUser.getName) {
+                @blogpost_actionbuttons(post)
+            }
+
+
+        </section>
+    </div>
+}

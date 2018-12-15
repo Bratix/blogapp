@@ -1,0 +1,35 @@
+@(blog : Blog, blogForm : Form[Blog],categories : List[Category])
+@import helper._
+@base(title = "Blog Update"){
+    <div class = "container-field">
+        <div class="text-center"><h1><strong>Update your blog</strong></h1></div>
+        <br><br>
+        <div class = "row">
+
+            <div class = "col-md-4 col-md-offset-4">
+            @helper.form(action = helper.CSRF(routes.BlogController.update_save(blog.getId))) {
+                @inputText(blogForm("blog_title"), '_label -> "", 'placeholder -> "Your blog title", 'class -> "form-control")
+                @inputText(blogForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")
+
+                <strong>Blog category:</strong> <br>
+                <select id="Category" name="Category">
+                    @for(category <- categories){
+                        @if(blog.getCategory.getName != category.getName) {
+                            <option value=@category.getId >@category.getName</option>
+                        }else {
+                            <option value=@category.getId selected>@category.getName </option>
+                        }
+                    }
+                </select>
+                <br><br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-link">&nbsp Create your blog &nbsp</button>
+                </div>
+
+            }
+            </div>
+
+        </div>
+
+    </div>
+}

@@ -1,6 +1,7 @@
 package models;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.joda.time.LocalDateTime;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,6 +19,9 @@ public class Comment {
 
     @Column(name = "text")
     private String text;
+
+    @Column(name = "dateTime")
+    private LocalDateTime creation_date = LocalDateTime.now();
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "BlogPost_id")
@@ -41,6 +45,12 @@ public class Comment {
     public void setText(String text) {
         this.text = text;
     }
+    public LocalDateTime getCreation_date() {
+        return creation_date;
+    }
+    public void setCreation_date(LocalDateTime creation_date) {
+        this.creation_date = creation_date;
+    }
     public BlogPost getBlogPost() {
         return blogPost;
     }
@@ -53,7 +63,7 @@ public class Comment {
     public void setUser(User user) {
         this.user = user;
     }
-    public Comment(String text, BlogPost blogPost, User user) {
+    public Comment(String text) {
         this.text = text;
     }
     public Comment() {

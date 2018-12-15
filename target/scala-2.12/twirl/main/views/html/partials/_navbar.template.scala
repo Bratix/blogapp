@@ -41,12 +41,12 @@ Seq[Any](format.raw/*1.17*/("""
 
             <div class="page-links col-md-2">
                 <a href=""""),_display_(/*11.27*/routes/*11.33*/.HomeController.index()),format.raw/*11.56*/("""">  Home </a>
-                <a href=#> Categories </a>
+                <a href=""""),_display_(/*12.27*/routes/*12.33*/.HomeController.category_detail),format.raw/*12.64*/(""""> Categories </a>
             </div>
 
             <div class="col-md-3">
-                <form action=# method="GET" class="search-form">
-                <input type="text" name="search" placeholder=" Search" class="search-input">
+                <form action=""""),_display_(/*16.32*/routes/*16.38*/.HomeController.tag_search),format.raw/*16.64*/("""" method="GET" class="search-form">
+                <input type="text" name="tag" id="tag" placeholder=" Search" class="search-input">
                     <button type="submit" class="btn loop-icon"><span><i class="glyphicon glyphicon-search"></i></span></button>
                 </form>
             </div>
@@ -54,21 +54,18 @@ Seq[Any](format.raw/*1.17*/("""
                 <div class="login-area col-md-2 navbar-right">
 
 
-
-
-
-                    """),_display_(/*28.22*/if(name == null)/*28.38*/{_display_(Seq[Any](format.raw/*28.39*/("""
-                        """),format.raw/*29.25*/("""<a href=""""),_display_(/*29.35*/routes/*29.41*/.HomeController.login_get()),format.raw/*29.68*/("""">Sing in</a>
+                    """),_display_(/*25.22*/if(name == null)/*25.38*/{_display_(Seq[Any](format.raw/*25.39*/("""
+                        """),format.raw/*26.25*/("""<a href=""""),_display_(/*26.35*/routes/*26.41*/.HomeController.login_get()),format.raw/*26.68*/("""">Sing in</a>
                         <span class="separator"> | </span>
                         <a href=#>Sing up</a>
-                    """)))}/*32.22*/else/*32.26*/{_display_(Seq[Any](format.raw/*32.27*/("""
-                        """),format.raw/*33.25*/("""<a href="">"""),_display_(/*33.37*/name),format.raw/*33.41*/("""</a>
+                    """)))}/*29.22*/else/*29.26*/{_display_(Seq[Any](format.raw/*29.27*/("""
+                        """),format.raw/*30.25*/("""<a href="">"""),_display_(/*30.37*/name),format.raw/*30.41*/("""</a>
                         <span class="separator"> | </span>
-                        <a href=""""),_display_(/*35.35*/routes/*35.41*/.HomeController.logout()),format.raw/*35.65*/("""">Logout</a>
-                    """)))}),format.raw/*36.22*/("""
+                        <a href=""""),_display_(/*32.35*/routes/*32.41*/.HomeController.logout()),format.raw/*32.65*/("""">Logout</a>
+                    """)))}),format.raw/*33.22*/("""
 
 
-                """),format.raw/*39.17*/("""</div>
+                """),format.raw/*36.17*/("""</div>
 
         </div>
     </div>
@@ -90,11 +87,11 @@ Seq[Any](format.raw/*1.17*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 02 18:01:55 CET 2018
+                  DATE: Tue Dec 11 00:57:20 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/partials/_navbar.scala.html
-                  HASH: 8d5b9ca0e72ae3335ca22fd39850a8a818508053
-                  MATRIX: 959->1|1069->16|1097->18|1412->306|1427->312|1471->335|2047->884|2072->900|2111->901|2165->927|2202->937|2217->943|2265->970|2427->1113|2440->1117|2479->1118|2533->1144|2572->1156|2597->1160|2724->1260|2739->1266|2784->1290|2850->1325|2900->1347
-                  LINES: 28->1|33->1|34->2|43->11|43->11|43->11|60->28|60->28|60->28|61->29|61->29|61->29|61->29|64->32|64->32|64->32|65->33|65->33|65->33|67->35|67->35|67->35|68->36|71->39
+                  HASH: 8a62a6d135bc73773692ab4eca5144f336315c84
+                  MATRIX: 959->1|1069->16|1097->18|1412->306|1427->312|1471->335|1539->376|1554->382|1606->413|1742->522|1757->528|1804->554|2234->957|2259->973|2298->974|2352->1000|2389->1010|2404->1016|2452->1043|2614->1186|2627->1190|2666->1191|2720->1217|2759->1229|2784->1233|2911->1333|2926->1339|2971->1363|3037->1398|3087->1420
+                  LINES: 28->1|33->1|34->2|43->11|43->11|43->11|44->12|44->12|44->12|48->16|48->16|48->16|57->25|57->25|57->25|58->26|58->26|58->26|58->26|61->29|61->29|61->29|62->30|62->30|62->30|64->32|64->32|64->32|65->33|68->36
                   -- GENERATED --
               */
           

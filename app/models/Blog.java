@@ -1,14 +1,12 @@
 package models;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.joda.time.DateTime;
 import org.joda.time.LocalDateTime;
-import org.joda.time.format.DateTimeFormatter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -42,10 +40,10 @@ public class Blog {
 
     @OneToMany(
             mappedBy = "blog",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
-    private List<BlogPost> blogPosts = new ArrayList<>();
+    private Set<BlogPost> blogPosts = new HashSet<>();
 
     public void addBlogPost(BlogPost blogPost){
         blogPosts.add(blogPost);
@@ -95,10 +93,10 @@ public class Blog {
     public void setTags(String tags) {
         this.tags = tags;
     }
-    public List<BlogPost> getBlogPosts() {
+    public Set<BlogPost> getBlogPosts() {
         return blogPosts;
     }
-    public void setBlogPosts(List<BlogPost> blogPosts) {
+    public void setBlogPosts(Set<BlogPost> blogPosts) {
         this.blogPosts = blogPosts;
     }
     public Blog(String blog_title, String tags) {

@@ -40,7 +40,7 @@ Seq[Any](format.raw/*1.26*/("""
     <div class = "row">
 
         <div class = "col-md-4 col-md-offset-4">
-            """),_display_(/*11.14*/helper/*11.20*/.form(action = routes.HomeController.login_post())/*11.70*/ {_display_(Seq[Any](format.raw/*11.72*/("""
+            """),_display_(/*11.14*/helper/*11.20*/.form(action = helper.CSRF(routes.HomeController.login_post()))/*11.83*/ {_display_(Seq[Any](format.raw/*11.85*/("""
                 """),_display_(/*12.18*/inputText(loginForm("name"), '_label -> "", 'placeholder -> "Username", 'class -> "form-control")),format.raw/*12.115*/("""
                 """),_display_(/*13.18*/inputPassword(loginForm("password"), '_label -> "", 'placeholder -> "Password", 'class -> "form-control")),format.raw/*13.123*/("""
                 """),format.raw/*14.17*/("""<div class="text-center">
@@ -71,10 +71,10 @@ Seq[Any](format.raw/*1.26*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 02 00:33:02 CET 2018
+                  DATE: Sun Dec 09 01:38:49 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/login/login.scala.html
-                  HASH: 3b6df73cc6fd3f59a7356e2fe47b2d97e26db963
-                  MATRIX: 959->1|1056->28|1131->25|1159->76|1188->97|1226->98|1254->100|1506->325|1521->331|1580->381|1620->383|1666->402|1785->499|1831->518|1958->623|2004->641|2190->796|2233->812
+                  HASH: 8313b492085f9951215bc622037f97482e26baf7
+                  MATRIX: 959->1|1056->28|1131->25|1159->76|1188->97|1226->98|1254->100|1506->325|1521->331|1593->394|1633->396|1679->415|1798->512|1844->531|1971->636|2017->654|2203->809|2246->825
                   LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|43->11|43->11|43->11|43->11|44->12|44->12|45->13|45->13|46->14|49->17|53->21
                   -- GENERATED --
               */

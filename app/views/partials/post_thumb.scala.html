@@ -1,11 +1,11 @@
 @(post : BlogPost)
-<img src="{{ post.picture.url }}" alt="" >
+
 
 <h5 class="grey-text"> by @post.getUser.getName </h5>
 
 <h5 class="grey-text"> @post.getCreation_date.getDayOfMonth/@post.getCreation_date.getMonthOfYear/@post.getCreation_date.getYear at @post.getCreation_date.getHourOfDay:@post.getCreation_date.getMinuteOfHour </h5>
 
-<a href="#" class="thumb-link">
+<a href="@routes.HomeController.blogpost_detail(post.getId)" class="thumb-link">
     <h3> @post.getPost_title </h3>
 </a>
 
@@ -18,4 +18,4 @@
 </div>
 <br>
 
-<a href="#" class="btn-link">Continue Reading...</a>
+<a href="@routes.HomeController.blogpost_detail(post.getId)" class="btn-link">Continue Reading...</a>

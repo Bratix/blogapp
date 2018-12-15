@@ -1,0 +1,26 @@
+@(postForm : Form[BlogPost],id: Int)
+@import helper.inputText, helper.textarea, helper.select, helper.CSRF
+@base(title = "Update your post"){
+
+    <div class = "container-field">
+        <div class="text-center"><h1><strong>Update your post!</strong></h1></div>
+        <br><br>
+        <div class = "row">
+
+            <div class = "col-md-4 col-md-offset-4">
+            @helper.form(action = helper.CSRF(routes.BlogPostController.save_blogpost_update(id))) {
+                @inputText(postForm("post_title"), '_label -> "", 'placeholder -> "Your post title", 'class -> "form-control")
+                @inputText(postForm("post_text"), '_label -> "", 'placeholder -> "Post content", 'class -> "form-control")
+                @inputText(postForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-link">&nbsp Update post &nbsp</button>
+                </div>
+
+            }
+            </div>
+
+        </div>
+
+    </div>
+}

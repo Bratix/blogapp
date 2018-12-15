@@ -3,27 +3,32 @@
 @(blogs : List[Blog], blogPosts: List[BlogPost])
 @base(title = "Home") {
     <section>
-    <div class="swiper-container">
-            <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-                <!-- Slides -->
 
+        <div class="swiper-container">
+                <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                    <!-- Slides -->
 
+                @for(blog <- blogs) {
+                    <div class="swiper-slide" height="250px">
+                    @*<div class="blog-picture col-md-offset-1 col-md-3">
+                    <img src="{{ blog.picture.url }}" alt="" height="300" width="400">
+                    </div>*@
+                    @blog_thumb(blog)
+                    </div>
+                }
 
-            @for(blog <- blogs) {
-                <div class="swiper-slide" height="250px">
-                @*<div class="blog-picture col-md-offset-1 col-md-3">
-                <img src="{{ blog.picture.url }}" alt="" height="300" width="400">
-                </div>*@
-                @blog_thumb(blog)
-                </div>
-            }
-
-
+            </div>
+            <div class="swiper-scrollbar"></div>
         </div>
-        <div class="swiper-scrollbar"></div>
-    </div>
+
     </section>
+
+    <div class="text-center padding-bottom-20 padding-top-20">
+        <form action="@routes.BlogController.create_Blog()" method="get">
+            <button class="btn btn-link">Create your own blog</button>
+        </form>
+    </div>
 
     <section class="col-md-4 col-md-offset-1 padding-top-20">
 

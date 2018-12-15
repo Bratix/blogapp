@@ -18,7 +18,6 @@ public class UserLogin {
         else
             validation = true;
 
-        System.out.println(validation);
         entityManager.getTransaction().commit();
         entityManagerFactory.close();
 

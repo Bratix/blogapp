@@ -5,7 +5,9 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Category_table")
@@ -20,12 +22,13 @@ public class Category {
     @Column(name = "name")
     private String name;
 
+
     @OneToMany(
             mappedBy = "category",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
-    private List<Blog> blogs = new ArrayList<>();
+    private Set<Blog> blogs = new HashSet<>();
 
     public void addBlog(Blog blog){
         blogs.add(blog);
@@ -51,10 +54,10 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-    public List<Blog> getBlogs() {
+    public Set<Blog> getBlogs() {
         return blogs;
     }
-    public void setBlogs(List<Blog> blogs) {
+    public void setBlogs(Set<Blog> blogs) {
         this.blogs = blogs;
     }
     public Category(String name) {

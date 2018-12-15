@@ -1,0 +1,35 @@
+@(post: BlogPost, commentForm : Form[Comment], user: User)
+@import partials.comment_area
+@*<div class="text-center">*@
+    @*<img src="{{ post.picture.url }}" alt="" >*@
+@*</div>*@
+<br><br>
+<div class="text-right ">
+
+@if(post.getUsers.contains(user)){
+    <a href = "@routes.HomeController.likes(post.getId)" class="like_button btn btn-primary mr-50 pt-30"><i class="glyphicon glyphicon-heart liked" ></i><span id = "like-counter">&nbsp;@post.getUsers.size()</span></a>
+}else{
+    <a href = "@routes.HomeController.likes(post.getId)" class="like_button btn btn-primary mr-50 pt-30"><i class="glyphicon glyphicon-heart-empty liked" ></i><span id = "like-counter">&nbsp;@post.getUsers.size()</span></a>
+}
+
+</div>
+
+<h5 class="grey-text"> by @post.getUser.getName</h5>
+
+<h5 class="grey-text">@post.getCreation_date.getDayOfMonth/@post.getCreation_date.getMonthOfYear/@post.getCreation_date.getYear at @post.getCreation_date.getHourOfDay:@post.getCreation_date.getMinuteOfHour </h5>
+
+<a href="#" class="thumb-link">
+    <h3>@post.getPost_title </h3>
+</a>
+
+<p class="padding-bottom-20">&nbsp;@post.getPost_text</p>
+
+<div class="tags-area">
+@for(tag <- post.getTags.split(",") ) {
+    <a href="#" class="btn-link">@tag</a>
+}
+</div>
+
+<div class="padding-left-100">
+@comment_area(post.getComments, commentForm, post.getId)
+</div>

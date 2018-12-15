@@ -5,7 +5,9 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "User_table")
@@ -18,18 +20,23 @@ public class User {
     @GenericGenerator(name = "incrementator", strategy = "increment" )
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
     @Column(name = "password")
     private String password;
 
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    private Set<BlogPost> blogPostLiked = new HashSet<>();
+
+
+
     @OneToMany(
             mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
-    private List<Blog> blogs = new ArrayList<>();
+    private Set<Blog> blogs = new HashSet<>();
 
     public void addBlog(Blog blog){
         blogs.add(blog);
@@ -43,10 +50,10 @@ public class User {
 
     @OneToMany(
             mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
-    private List<BlogPost> blogPosts = new ArrayList<>();
+    private Set<BlogPost> blogPosts = new HashSet<>();
 
 
     public void addBlogPost(BlogPost blogPost){
@@ -61,10 +68,10 @@ public class User {
 
     @OneToMany(
             mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
-    private List<Comment> comments = new ArrayList<>();
+    private Set<Comment> comments =  new HashSet<>();
 
     public void addComment(Comment comment){
         comments.add(comment);
@@ -97,22 +104,28 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public List<Blog> getBlogs() {
+    public Set<BlogPost> getBlogPostLiked() {
+        return blogPostLiked;
+    }
+    public void setBlogPostLiked(Set<BlogPost> blogPostLiked) {
+        this.blogPostLiked = blogPostLiked;
+    }
+    public Set<Blog> getBlogs() {
         return blogs;
     }
-    public void setBlogs(List<Blog> blogs) {
+    public void setBlogs(Set<Blog> blogs) {
         this.blogs = blogs;
     }
-    public List<BlogPost> getBlogPosts() {
+    public Set<BlogPost> getBlogPosts() {
         return blogPosts;
     }
-    public void setBlogPosts(List<BlogPost> blogPosts) {
+    public void setBlogPosts(Set<BlogPost> blogPosts) {
         this.blogPosts = blogPosts;
     }
-    public List<Comment> getComments() {
+    public Set<Comment> getComments() {
         return comments;
     }
-    public void setComments(List<Comment> comments) {
+    public void setComments(Set<Comment> comments) {
         this.comments = comments;
     }
     public User(String name, String password) {

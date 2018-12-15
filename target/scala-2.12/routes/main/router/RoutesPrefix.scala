@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Amar/Desktop/javaplay/blogapp/conf/routes
-// @DATE:Mon Dec 03 02:28:44 CET 2018
+// @DATE:Tue Dec 11 00:57:20 CET 2018
 
 
 package router {

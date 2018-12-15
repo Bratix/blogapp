@@ -6,7 +6,9 @@ import org.joda.time.LocalDateTime;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "BlogPost_table")
@@ -39,12 +41,23 @@ public class BlogPost {
     @JoinColumn(name = "User_id")
     private User user;
 
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "Likes", joinColumns=@JoinColumn(referencedColumnName="id"), inverseJoinColumns=@JoinColumn(referencedColumnName="id"))
+    private Set<User> users = new HashSet<>();
+
+    public void addUsers(User user){
+        users.add(user);
+    }
+    public void removeUsers(User user){
+        users.remove(user);
+    }
+
     @OneToMany(
             mappedBy = "blogPost",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
-    private List<Comment> comments = new ArrayList<>();
+    private Set<Comment> comments = new HashSet<>();
 
     public void addComment(Comment comment){
         comments.add(comment);
@@ -95,10 +108,10 @@ public class BlogPost {
     public void setBlog(Blog blog) {
         this.blog = blog;
     }
-    public List<Comment> getComments() {
+    public Set<Comment> getComments() {
         return comments;
     }
-    public void setComments(List<Comment> comments) {
+    public void setComments(Set<Comment> comments) {
         this.comments = comments;
     }
     public User getUser() {
@@ -106,6 +119,12 @@ public class BlogPost {
     }
     public void setUser(User user) {
         this.user = user;
+    }
+    public Set<User> getUsers() {
+        return users;
+    }
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
     public BlogPost(String post_title, String post_text, String tags) {
         this.post_title = post_title;

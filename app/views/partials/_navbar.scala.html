@@ -9,20 +9,17 @@
 
             <div class="page-links col-md-2">
                 <a href="@routes.HomeController.index()">  Home </a>
-                <a href=#> Categories </a>
+                <a href="@routes.HomeController.category_detail"> Categories </a>
             </div>
 
             <div class="col-md-3">
-                <form action=# method="GET" class="search-form">
-                <input type="text" name="search" placeholder=" Search" class="search-input">
+                <form action="@routes.HomeController.tag_search" method="GET" class="search-form">
+                <input type="text" name="tag" id="tag" placeholder=" Search" class="search-input">
                     <button type="submit" class="btn loop-icon"><span><i class="glyphicon glyphicon-search"></i></span></button>
                 </form>
             </div>
 
                 <div class="login-area col-md-2 navbar-right">
-
-
-
 
 
                     @if(name == null){

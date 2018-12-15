@@ -2,16 +2,64 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# An example controller showing a sample home page
+#Login page
+GET     /login                      controllers.HomeController.login_get
+POST    /login                      controllers.HomeController.login_post
+
+#Logout
+GET     /logout                     controllers.HomeController.logout
+
+#Index page
 GET     /                           controllers.HomeController.index
 
-GET     /login                      controllers.HomeController.login_get
-+ nocsrf
-POST    /login                      controllers.HomeController.login_post
-GET     /logout                     controllers.HomeController.logout
-GET     /blog/create                controllers.BlogController.create_Blog
-+ nocsfr
-POST    /blog/create                controllers.BlogController.save_Blog
+#Blog detail page
+GET     /blog/:id                   controllers.HomeController.blog_detail(id: Int)
+
+#Blog create view
+GET     /create/blog                controllers.BlogController.create_Blog
+POST    /create/blog                controllers.BlogController.save_Blog
+
+#Blog delete view
+POST    /delete/blog/:id            controllers.BlogController.delete_blog(id: Int)
+
+#Blog update view
+GET     /update/blog/:id            controllers.BlogController.update_blog(id: Int)
+POST    /update/blog/:id            controllers.BlogController.update_save(id: Int)
+
+#BlogPost detail view
+GET     /post/:id                   controllers.HomeController.blogpost_detail(id:Int)
+
+#BlogPost create view
+GET     /create/post/:id            controllers.BlogPostController.blogpost_create(id: Int)
+POST    /create/post/:id            controllers.BlogPostController.blogpost_save(id: Int)
+
+#BlogPost update view
+GET     /update/post/:id            controllers.BlogPostController.update_blogpost(id: Int)
+POST    /update/post/:id            controllers.BlogPostController.save_blogpost_update(id: Int)
+
+#BlogPost delete view
+POST    /delete/post/:id            controllers.BlogPostController.blogpost_delete(id: Int)
+
+#Comment create view
+POST    /create/comment/:id         controllers.CommentController.comment_save(id: Int)
+
+#Categories page
+GET     /categories                 controllers.HomeController.category_detail
+
+#Categories blogs
+GET     /categories/:id             controllers.HomeController.category_posts(id: Int)
+
+#Tag search
+GET     /search                     controllers.HomeController.tag_search
+
+#Like
+GET    /like/post/:id              controllers.HomeController.likes(id: Int)
+
+
+
+
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
