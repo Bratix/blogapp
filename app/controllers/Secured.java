@@ -7,7 +7,7 @@ import play.mvc.Security;
 public class Secured extends Security.Authenticator {
     @Override
     public String getUsername(Context ctx) {
-        System.out.println(ctx.session().get("name"));return ctx.session().get("name");
+        return ctx.session().get("name");
     }
 
     @Override
