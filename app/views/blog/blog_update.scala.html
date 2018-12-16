@@ -7,10 +7,9 @@
         <div class = "row">
 
             <div class = "col-md-4 col-md-offset-4">
-            @helper.form(action = helper.CSRF(routes.BlogController.update_save(blog.getId))) {
+            @helper.form(action = helper.CSRF(routes.BlogController.blog_update_post(blog.getId)),'enctype -> "multipart/form-data") {
                 @inputText(blogForm("blog_title"), '_label -> "", 'placeholder -> "Your blog title", 'class -> "form-control")
-                @inputText(blogForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")
-
+                <input type="file" name="picture">
                 <strong>Blog category:</strong> <br>
                 <select id="Category" name="Category">
                     @for(category <- categories){

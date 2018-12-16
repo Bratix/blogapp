@@ -21,6 +21,9 @@ public class Blog {
     @GenericGenerator(name = "incrementator", strategy = "increment" )
     private int id;
 
+    @Column(name = "picture_path")
+    private String picture_path;
+
     @Column(name = "blog_title")
     private String blog_title;
 
@@ -34,9 +37,6 @@ public class Blog {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Category_id")
     private Category category;
-
-    @Column(name = "tags")
-    private String tags;
 
     @OneToMany(
             mappedBy = "blog",
@@ -63,6 +63,12 @@ public class Blog {
     public void setId(int id) {
         this.id = id;
     }
+    public String getPicture_path() {
+        return picture_path;
+    }
+    public void setPicture_path(String picture_path) {
+        this.picture_path = picture_path;
+    }
     public String getBlog_title() {
         return blog_title;
     }
@@ -87,21 +93,14 @@ public class Blog {
     public void setCategory(Category category) {
         this.category = category;
     }
-    public String getTags() {
-        return tags;
-    }
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
     public Set<BlogPost> getBlogPosts() {
         return blogPosts;
     }
     public void setBlogPosts(Set<BlogPost> blogPosts) {
         this.blogPosts = blogPosts;
     }
-    public Blog(String blog_title, String tags) {
+    public Blog(String blog_title) {
         this.blog_title = blog_title;
-        this.tags = tags;
     }
     public Blog() {
     }
@@ -111,7 +110,6 @@ public class Blog {
                 "id=" + id +
                 ", blog_title='" + blog_title + '\'' +
                 ", creation_date=" + creation_date +
-                ", tags='" + tags + '\'' +
                 ", category" + category.getName() + '\'' +
                 '}';
     }

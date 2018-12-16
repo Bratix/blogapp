@@ -35,7 +35,7 @@ Seq[Any](format.raw/*1.18*/("""
 
         <!-- Post Update -->
     <div >
-        <form action=""""),_display_(/*6.24*/routes/*6.30*/.BlogPostController.update_blogpost(post.getId)),format.raw/*6.77*/("""" method="get" visible = "off">
+        <form action=""""),_display_(/*6.24*/routes/*6.30*/.BlogPostController.blogpost_update_get(post.getId)),format.raw/*6.81*/("""" method="get" visible = "off">
 
             <div class="text-center">
                 <button type="submit" class="btn-link">Update post</button>
@@ -70,10 +70,10 @@ Seq[Any](format.raw/*1.18*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 10 17:25:25 CET 2018
+                  DATE: Sun Dec 16 17:21:33 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/partials/blogpost_actionbuttons.scala.html
-                  HASH: eb6df5e8926ecbe2c7493b5185d5dbd447762a2b
-                  MATRIX: 976->1|1087->17|1115->19|1234->112|1248->118|1315->165|1618->441|1633->447|1714->507
+                  HASH: 1f5c1a6de704707a666fae357e0c9c1c1cd9e82d
+                  MATRIX: 976->1|1087->17|1115->19|1234->112|1248->118|1319->169|1622->445|1637->451|1718->511
                   LINES: 28->1|33->1|34->2|38->6|38->6|38->6|49->17|49->17|49->17
                   -- GENERATED --
               */

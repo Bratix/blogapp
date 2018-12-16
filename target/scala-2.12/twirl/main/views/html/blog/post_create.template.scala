@@ -28,7 +28,7 @@ object post_create extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
   def apply/*1.2*/(postForm : Form[BlogPost],id : Int):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
-/*2.2*/import helper.inputText, helper.textarea, helper.select, helper.CSRF
+/*2.2*/import helper.inputText, helper.textarea, helper.select, helper.CSRF, helper.inputFile
 
 
 Seq[Any](format.raw/*1.38*/("""
@@ -40,18 +40,20 @@ Seq[Any](format.raw/*1.38*/("""
         <div class = "row">
 
             <div class = "col-md-4 col-md-offset-4">
-            """),_display_(/*11.14*/helper/*11.20*/.form(action = helper.CSRF(routes.BlogPostController.blogpost_save(id)))/*11.92*/ {_display_(Seq[Any](format.raw/*11.94*/("""
+            """),_display_(/*11.14*/helper/*11.20*/.form(action = helper.CSRF(routes.BlogPostController.blogpost_create_post(id)),'enctype -> "multipart/form-data")/*11.133*/ {_display_(Seq[Any](format.raw/*11.135*/("""
                 """),_display_(/*12.18*/inputText(postForm("post_title"), '_label -> "", 'placeholder -> "Your post title", 'class -> "form-control")),format.raw/*12.127*/("""
-                """),_display_(/*13.18*/inputText(postForm("post_text"), '_label -> "", 'placeholder -> "Post content", 'class -> "form-control")),format.raw/*13.123*/("""
-                """),_display_(/*14.18*/inputText(postForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")),format.raw/*14.110*/("""
+                """),_display_(/*13.18*/textarea(postForm("post_text"),args = 'rows -> 7, '_label -> "", 'placeholder -> "Post content", 'class -> "form-control")),format.raw/*13.140*/("""
+                """),format.raw/*14.17*/("""<br>
+                <input type="file" name="picture">
+                """),_display_(/*16.18*/inputText(postForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")),format.raw/*16.110*/("""
 
 
-                """),format.raw/*17.17*/("""<div class="text-center">
+                """),format.raw/*19.17*/("""<div class="text-center">
                     <button type="submit" class="btn btn-link">&nbsp Create your post &nbsp</button>
                 </div>
 
-            """)))}),format.raw/*21.14*/("""
-            """),format.raw/*22.13*/("""</div>
+            """)))}),format.raw/*23.14*/("""
+            """),format.raw/*24.13*/("""</div>
 
         </div>
 
@@ -72,11 +74,11 @@ Seq[Any](format.raw/*1.38*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 10 17:23:15 CET 2018
+                  DATE: Sun Dec 16 17:21:33 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/blog/post_create.scala.html
-                  HASH: 9a9550c7efcb1a43aef0e13014e6a8a9df8e069b
-                  MATRIX: 971->1|1080->40|1178->37|1206->111|1243->140|1281->141|1315->149|1572->379|1587->385|1668->457|1708->459|1754->478|1885->587|1931->606|2058->711|2104->730|2218->822|2268->844|2467->1012|2509->1026
-                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|37->5|43->11|43->11|43->11|43->11|44->12|44->12|45->13|45->13|46->14|46->14|49->17|53->21|54->22
+                  HASH: 41c2c6aaea30e189abbfcd0fa89c12fc4f0b9691
+                  MATRIX: 971->1|1080->40|1196->37|1224->129|1261->158|1299->159|1333->167|1590->397|1605->403|1728->516|1769->518|1815->537|1946->646|1992->665|2136->787|2182->805|2284->880|2398->972|2448->994|2647->1162|2689->1176
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|37->5|43->11|43->11|43->11|43->11|44->12|44->12|45->13|45->13|46->14|48->16|48->16|51->19|55->23|56->24
                   -- GENERATED --
               */
           

@@ -1,5 +1,6 @@
 @(post : BlogPost)
 
+<img src="@routes.Assets.versioned(post.getPicture_path)" alt="" >
 
 <h5 class="grey-text"> by @post.getUser.getName </h5>
 

@@ -21,11 +21,15 @@ public class BlogPost {
     @GenericGenerator(name = "incrementator", strategy = "increment" )
     private int id;
 
+    @Column(name = "picture_path")
+    private String picture_path;
+
     @Column(name = "dateTime")
     private LocalDateTime creation_date = LocalDateTime.now();
 
     @Column(name = "post_title")
     private String post_title;
+
 
     @Column(name = "post_text")
     private String post_text;
@@ -77,6 +81,12 @@ public class BlogPost {
     }
     public void setId(int id) {
         this.id = id;
+    }
+    public String getPicture_path() {
+        return picture_path;
+    }
+    public void setPicture_path(String picture_path) {
+        this.picture_path = picture_path;
     }
     public LocalDateTime getCreation_date() {
         return creation_date;

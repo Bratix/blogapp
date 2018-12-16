@@ -27,8 +27,9 @@ public class CommentController extends Controller{
     @Inject
     FormFactory formFactory;
 
+    //comment create post method
     @Security.Authenticated(Secured.class)
-    public Result comment_save(int id){
+    public Result comment_create_post(int id){
         Form<Comment> commentForm = formFactory.form(Comment.class).bindFromRequest();
         Comment comment = commentForm.get();
 
@@ -50,6 +51,7 @@ public class CommentController extends Controller{
         return redirect(routes.HomeController.blogpost_detail(id));
     }
 
+    //comment update get method
     @Security.Authenticated(Secured.class)
     public Result comment_update_get(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
@@ -66,6 +68,7 @@ public class CommentController extends Controller{
         return ok(comment_update.render(commentForm, comment.getId()));
     }
 
+    //comment update post method
     @Security.Authenticated(Secured.class)
     public Result comment_update_post(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
@@ -85,6 +88,7 @@ public class CommentController extends Controller{
         return redirect(routes.HomeController.blogpost_detail(comment.getBlogPost().getId()));
     }
 
+    //comment delete method
     @Security.Authenticated(Secured.class)
     public Result comment_delete(int id){
 
@@ -93,6 +97,8 @@ public class CommentController extends Controller{
         entityManager.getTransaction().begin();
 
         Comment comment = entityManager.find(Comment.class,id);
+
+        if(Secured.getName(ctx()).equals(comment.getUser().getName()))
         entityManager.remove(comment);
 
         entityManager.getTransaction().commit();

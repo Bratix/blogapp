@@ -40,17 +40,18 @@ Seq[Any](format.raw/*1.37*/("""
         <div class = "row">
 
             <div class = "col-md-4 col-md-offset-4">
-            """),_display_(/*11.14*/helper/*11.20*/.form(action = helper.CSRF(routes.BlogPostController.save_blogpost_update(id)))/*11.99*/ {_display_(Seq[Any](format.raw/*11.101*/("""
+            """),_display_(/*11.14*/helper/*11.20*/.form(action = helper.CSRF(routes.BlogPostController.blogpost_update_post(id)),'enctype -> "multipart/form-data")/*11.133*/ {_display_(Seq[Any](format.raw/*11.135*/("""
                 """),_display_(/*12.18*/inputText(postForm("post_title"), '_label -> "", 'placeholder -> "Your post title", 'class -> "form-control")),format.raw/*12.127*/("""
-                """),_display_(/*13.18*/inputText(postForm("post_text"), '_label -> "", 'placeholder -> "Post content", 'class -> "form-control")),format.raw/*13.123*/("""
-                """),_display_(/*14.18*/inputText(postForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")),format.raw/*14.110*/("""
+                """),_display_(/*13.18*/textarea(postForm("post_text"), args = 'rows -> 7,'_label -> "", 'placeholder -> "Post content", 'class -> "form-control")),format.raw/*13.140*/("""
+                """),format.raw/*14.17*/("""<input type="file" name="picture">
+                """),_display_(/*15.18*/inputText(postForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")),format.raw/*15.110*/("""
                 
-                """),format.raw/*16.17*/("""<div class="text-center">
+                """),format.raw/*17.17*/("""<div class="text-center">
                     <button type="submit" class="btn btn-link">&nbsp Update post &nbsp</button>
                 </div>
 
-            """)))}),format.raw/*20.14*/("""
-            """),format.raw/*21.13*/("""</div>
+            """)))}),format.raw/*21.14*/("""
+            """),format.raw/*22.13*/("""</div>
 
         </div>
 
@@ -71,11 +72,11 @@ Seq[Any](format.raw/*1.37*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Dec 11 00:35:25 CET 2018
+                  DATE: Sun Dec 16 18:12:14 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/blog/post_update.scala.html
-                  HASH: 29d80d1cc2d9a81c82ba6a2a599dcb6ad6505652
-                  MATRIX: 971->1|1079->39|1177->36|1205->110|1245->142|1283->143|1317->151|1577->384|1592->390|1680->469|1721->471|1767->490|1898->599|1944->618|2071->723|2117->742|2231->834|2295->870|2489->1033|2531->1047
-                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|37->5|43->11|43->11|43->11|43->11|44->12|44->12|45->13|45->13|46->14|46->14|48->16|52->20|53->21
+                  HASH: efe014a067d27a8cd7f8237c896c01f19b12c8bb
+                  MATRIX: 971->1|1079->39|1177->36|1205->110|1245->142|1283->143|1317->151|1577->384|1592->390|1715->503|1756->505|1802->524|1933->633|1979->652|2123->774|2169->792|2249->845|2363->937|2427->973|2621->1136|2663->1150
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|37->5|43->11|43->11|43->11|43->11|44->12|44->12|45->13|45->13|46->14|47->15|47->15|49->17|53->21|54->22
                   -- GENERATED --
               */
           

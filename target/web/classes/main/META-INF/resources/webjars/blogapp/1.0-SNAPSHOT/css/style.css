@@ -104,10 +104,13 @@
 /* html tags editing */
 p{
     font-family: 'Mali', cursive;
+    text-align: justify;
+    padding-right: 10px;
 }
 
 h1,h2,h3,h4,h5{
     font-family: 'Mali', cursive;
+    padding-right: 10px;
 }
 
 body{
@@ -186,7 +189,7 @@ img{
 /* swiper */
 .swiper-container {
     width: 80%;
-    height: 150px;
+    height: 350px;
 }
 
 .swiper-button-prev .swiper-button-next{
@@ -326,3 +329,4 @@ ul{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+

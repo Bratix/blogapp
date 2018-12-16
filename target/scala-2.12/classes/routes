@@ -20,32 +20,32 @@ GET     /                           controllers.HomeController.index
 GET     /blog/:id                   controllers.HomeController.blog_detail(id: Int)
 
 #Blog create view
-GET     /create/blog                controllers.BlogController.create_Blog
-POST    /create/blog                controllers.BlogController.save_Blog
+GET     /create/blog                controllers.BlogController.blog_create_get
+POST    /create/blog                controllers.BlogController.blog_create_post
 
 #Blog update view
-GET     /update/blog/:id            controllers.BlogController.update_blog(id: Int)
-POST    /update/blog/:id            controllers.BlogController.update_save(id: Int)
+GET     /update/blog/:id            controllers.BlogController.blog_update_get(id: Int)
+POST    /update/blog/:id            controllers.BlogController.blog_update_post(id: Int)
 
 #Blog delete view
-POST    /delete/blog/:id            controllers.BlogController.delete_blog(id: Int)
+POST    /delete/blog/:id            controllers.BlogController.blog_delete(id: Int)
 
 #BlogPost detail view
 GET     /post/:id                   controllers.HomeController.blogpost_detail(id:Int)
 
 #BlogPost create view
-GET     /create/post/:id            controllers.BlogPostController.blogpost_create(id: Int)
-POST    /create/post/:id            controllers.BlogPostController.blogpost_save(id: Int)
+GET     /create/post/:id            controllers.BlogPostController.blogpost_create_get(id: Int)
+POST    /create/post/:id            controllers.BlogPostController.blogpost_create_post(id: Int)
 
 #BlogPost update view
-GET     /update/post/:id            controllers.BlogPostController.update_blogpost(id: Int)
-POST    /update/post/:id            controllers.BlogPostController.save_blogpost_update(id: Int)
+GET     /update/post/:id            controllers.BlogPostController.blogpost_update_get(id: Int)
+POST    /update/post/:id            controllers.BlogPostController.blogpost_update_post(id: Int)
 
 #BlogPost delete view
 POST    /delete/post/:id            controllers.BlogPostController.blogpost_delete(id: Int)
 
 #Comment create view
-POST    /create/comment/:id         controllers.CommentController.comment_save(id: Int)
+POST    /create/comment/:id         controllers.CommentController.comment_create_post(id: Int)
 
 #Comment update view
 GET     /update/comment/:id         controllers.CommentController.comment_update_get(id : Int)
@@ -58,17 +58,16 @@ POST    /delete/comment/:id         controllers.CommentController.comment_delete
 GET     /categories                 controllers.HomeController.category_detail
 
 #Search by categories
-GET     /categories/:id             controllers.HomeController.category_posts(id: Int)
+GET     /categories/:id             controllers.HomeController.category_blogs(id: Int)
 
 #Tag search
 GET     /search                     controllers.HomeController.tag_search
 
+#User blogs
+GET     /user/blogs/:username       controllers.HomeController.user_blogs(username: String)
+
 #Like
 GET     /like/post/:id              controllers.HomeController.likes(id: Int)
-
-
-
-
 
 
 

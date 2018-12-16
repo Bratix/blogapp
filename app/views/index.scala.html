@@ -11,9 +11,6 @@
 
                 @for(blog <- blogs) {
                     <div class="swiper-slide" height="250px">
-                    @*<div class="blog-picture col-md-offset-1 col-md-3">
-                    <img src="{{ blog.picture.url }}" alt="" height="300" width="400">
-                    </div>*@
                     @blog_thumb(blog)
                     </div>
                 }
@@ -25,7 +22,7 @@
     </section>
 
     <div class="text-center padding-bottom-20 padding-top-20">
-        <form action="@routes.BlogController.create_Blog()" method="get">
+        <form action="@routes.BlogController.blog_create_get()" method="get">
             <button class="btn btn-link">Create your own blog</button>
         </form>
     </div>

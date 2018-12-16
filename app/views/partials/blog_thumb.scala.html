@@ -1,7 +1,7 @@
 @(blog : Blog)
-@*<div class="blog-picture col-md-offset-1 col-md-3">
-    *@@*<img src="@routes.Assets.versioned("images/favicon.png")" alt="" height="300" width="400">*@@*
-</div>*@
+<div class="blog-picture col-md-offset-1 col-md-3">
+    <img src="@routes.Assets.versioned(blog.getPicture_path)" alt="" height="300" width="400">
+</div>
 
 <div class="blog-content col-md-offset-2 col-md-3">
     <a href="@routes.HomeController.blog_detail(blog.getId)"> <h3>@blog.getBlog_title</h3> </a>

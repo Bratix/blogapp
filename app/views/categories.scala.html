@@ -7,9 +7,9 @@
 
         @for(category <- categories){
             <div class="container-category col-md-3 ml-30 mb-20">
-                <img src= alt="" height="300" width="400">
+                <img src="@routes.Assets.versioned(category.getPicture)" alt="" height="300" width="400">
                 <div class="catagory-title">
-                    <a href="@routes.HomeController.category_posts(category.getId)" class="btn btn-link-category">
+                    <a href="@routes.HomeController.category_blogs(category.getId)" class="btn btn-link-category">
                         <h5> @category.getName </h5>
                     </a>
                 </div>

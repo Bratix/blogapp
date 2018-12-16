@@ -40,9 +40,9 @@ Seq[Any](format.raw/*1.51*/("""
         <div class = "row">
 
             <div class = "col-md-4 col-md-offset-4">
-            """),_display_(/*11.14*/helper/*11.20*/.form(action = helper.CSRF(routes.BlogController.save_Blog()))/*11.82*/ {_display_(Seq[Any](format.raw/*11.84*/("""
+            """),_display_(/*11.14*/helper/*11.20*/.form(action = helper.CSRF(routes.BlogController.blog_create_post()),'enctype -> "multipart/form-data")/*11.123*/ {_display_(Seq[Any](format.raw/*11.125*/("""
                 """),_display_(/*12.18*/inputText(blogForm("blog_title"), '_label -> "", 'placeholder -> "Your blog title", 'class -> "form-control")),format.raw/*12.127*/("""
-                """),_display_(/*13.18*/inputText(blogForm("tags"), '_label -> "", 'placeholder -> "Tags", 'class -> "form-control")),format.raw/*13.110*/("""
+                """),format.raw/*13.17*/("""<input type="file" name="picture">
                 """),_display_(/*14.18*/select(field = blogForm("Category"), options = categories.map(category => category.getId.toString -> category.getName) )),format.raw/*14.138*/("""
 
                 """),format.raw/*16.17*/("""<div class="text-center">
@@ -71,11 +71,11 @@ Seq[Any](format.raw/*1.51*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Dec 06 01:01:24 CET 2018
+                  DATE: Sun Dec 16 17:21:33 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/blog/blog_create.scala.html
-                  HASH: fcdbeebdb21e876e9b5ecf1098a620ab19a9425d
-                  MATRIX: 977->1|1099->53|1197->50|1225->124|1262->153|1300->154|1334->162|1615->416|1630->422|1701->484|1741->486|1787->505|1918->614|1964->633|2078->725|2124->744|2266->864|2314->884|2513->1052|2555->1066
-                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|37->5|43->11|43->11|43->11|43->11|44->12|44->12|45->13|45->13|46->14|46->14|48->16|52->20|53->21
+                  HASH: 668ebb836602fb1023abdf9d89c0ba0e05573f3e
+                  MATRIX: 977->1|1099->53|1197->50|1225->124|1262->153|1300->154|1334->162|1615->416|1630->422|1743->525|1784->527|1830->546|1961->655|2007->673|2087->726|2229->846|2277->866|2476->1034|2518->1048
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|37->5|43->11|43->11|43->11|43->11|44->12|44->12|45->13|46->14|46->14|48->16|52->20|53->21
                   -- GENERATED --
               */
           

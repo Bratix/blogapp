@@ -23,20 +23,13 @@
                     </div>
                 </div>
                 }
-
-                @*<div class="comment-text-update hidden padding-bottom-10">
-                    <div class="form-group">
-                        <textarea class="form-control" name="comment_text" id="comment_text" maxlength="3000" cols="30" rows="10" placeholder="Add your comment here" required >{{comment.comment_text}}</textarea>
-                    </div>
-                    <button data-url="{% url 'blog:comment_update' comment.id %}" type="submit" class="btn btn-link update-com">Confirm</button>
-                </div>*@
             </div>
         </li>
     }
 </ul>
 
     <!-- New comment form -->
-<form action="@helper.CSRF(routes.CommentController.comment_save(id))" method="post" class="comment-form">
+<form action="@helper.CSRF(routes.CommentController.comment_create_post(id))" method="post" class="comment-form">
 
     <div class="text-center">
         @helper.textarea(commentForm("text"), '_label -> "", 'placeholder -> "Enter your comment here", 'class -> "form-control")
@@ -44,25 +37,3 @@
     </div>
 </form>
 
-    <!-- Empty comment for jquery -->
-@*<li class="hidden" id="emptycom">
-    <div class="comment-content col-md-7">
-        <p><span class="comment-date" id="comdate">{{comment.creation_date|date:"j M Y"}} at {{comment.creation_date|date:"H:i"}}</span></p>
-        <h4><strong id="comuser">{{comment.user.username}}</strong></h4>
-        <p id="comtext">{{comment.comment_text}}</p>
-
-        <div class="container-fluid comment-buttons padding-bottom-10">
-            <div class="row">
-                <button type="submit " class="btn-link btn-cupdate">Edit</button>
-                <button type="submit" data-url="{% url 'blog:comment_delete' 0 %}" class="btn-link btn-cdelete">Delete</button>
-            </div>
-        </div>
-
-        <div class="comment-text-update hidden padding-bottom-10">
-            <div class="form-group">
-                <textarea class="form-control" name="comment_text" id="comment_text" maxlength="3000" cols="30" rows="10" placeholder="Add your comment here" required >{{comment.comment_text}}</textarea>
-            </div>
-            <button data-url="{% url 'blog:comment_update' 0 %}" type="submit" class="btn btn-link update-com">Confirm</button>
-        </div>
-    </div>
-</li>*@

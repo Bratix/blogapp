@@ -22,6 +22,8 @@ public class Category {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "picture")
+    private String picture;
 
     @OneToMany(
             mappedBy = "category",
@@ -42,6 +44,13 @@ public class Category {
 
     //getters,setters,constructors
 
+
+    public String getPicture() {
+        return picture;
+    }
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
     public int getId() {
         return id;
     }

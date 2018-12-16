@@ -39,12 +39,13 @@ public class HomeController extends Controller {
     @Inject
     FormFactory formFactory;
 
-
+    //register get method
     public Result register_get(){
         Form<User> registerForm = formFactory.form(User.class);
         return ok(register.render(registerForm));
     }
 
+    //register post method
     public Result register_post(){
         Form<User> userForm = formFactory.form(User.class).bindFromRequest();
         User user = userForm.get();
@@ -63,12 +64,13 @@ public class HomeController extends Controller {
         return redirect(routes.HomeController.index());
     }
 
+    //login get method
     public Result login_get(){
         Form<Login> loginForm = formFactory.form(Login.class);
         return ok(login.render(loginForm));
     }
 
-
+    //login post method
     public Result login_post(){
         Form<Login> loginForm = formFactory.form(Login.class).bindFromRequest();
         Login signin;
@@ -92,20 +94,20 @@ public class HomeController extends Controller {
 
     }
 
-
+    //logout method
     public Result logout(){
         session().clear();
         return redirect(routes.HomeController.login_get());
     }
 
-
+    //index page of website
     public Result index(){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
 
-        List<Blog> blogs = entityManager.createQuery("from Blog").getResultList();
-        List<BlogPost> blogPosts = entityManager.createQuery("from BlogPost order by rand()").setMaxResults(5).getResultList();
+        List<Blog> blogs = entityManager.createQuery("from Blog order by rand()").setMaxResults(5).getResultList();
+        List<BlogPost> blogPosts = entityManager.createQuery("from BlogPost order by rand()").setMaxResults(10).getResultList();
 
 
         entityManager.getTransaction().commit();
@@ -114,6 +116,7 @@ public class HomeController extends Controller {
         return ok(index.render(blogs, blogPosts));
     }
 
+    //blog detail page
     @Security.Authenticated(Secured.class)
     public Result blog_detail(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
@@ -127,6 +130,7 @@ public class HomeController extends Controller {
         return ok(blog_detail.render(blog));
     }
 
+    //category detail page
     @Security.Authenticated(Secured.class)
     public Result category_detail(){
 
@@ -142,8 +146,9 @@ public class HomeController extends Controller {
         return ok(views.html.categories.render(categories));
     }
 
+    //blogs by category searches
     @Security.Authenticated(Secured.class)
-    public Result category_posts(int id){
+    public Result category_blogs(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
@@ -155,6 +160,7 @@ public class HomeController extends Controller {
         return ok(category_blogs.render(category));
     }
 
+    //blogpost detail
     @Security.Authenticated(Secured.class)
     public Result blogpost_detail(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
@@ -172,6 +178,7 @@ public class HomeController extends Controller {
 
     }
 
+    //searching posts by tag
     @Security.Authenticated(Secured.class)
     public Result tag_search(){
         DynamicForm requestData = formFactory.form().bindFromRequest();
@@ -190,6 +197,25 @@ public class HomeController extends Controller {
         return ok(tag_search.render(blogPosts));
     }
 
+    //users blogs
+    @Security.Authenticated(Secured.class)
+    public Result user_blogs(String username){
+
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+
+        User user = entityManager.createQuery("from User where name='"+username+"'", User.class).getSingleResult();
+        List<Blog> blogs = entityManager.createQuery("from Blog where user=" + user.getId(), Blog.class).getResultList();
+
+        entityManager.getTransaction().commit();
+        entityManagerFactory.close();
+
+        return ok(views.html.user_blogs.render(blogs));
+    }
+
+    //like logic
     @Security.Authenticated(Secured.class)
     public Result likes(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");

@@ -42,19 +42,18 @@ Seq[Any](_display_(/*4.2*/base(title = "Home")/*4.22*/ {_display_(Seq[Any](forma
 
                 """),_display_(/*12.18*/for(blog <- blogs) yield /*12.36*/ {_display_(Seq[Any](format.raw/*12.38*/("""
                     """),format.raw/*13.21*/("""<div class="swiper-slide" height="250px">
-                    """),format.raw/*16.29*/("""
-                    """),_display_(/*17.22*/blog_thumb(blog)),format.raw/*17.38*/("""
-                    """),format.raw/*18.21*/("""</div>
-                """)))}),format.raw/*19.18*/("""
+                    """),_display_(/*14.22*/blog_thumb(blog)),format.raw/*14.38*/("""
+                    """),format.raw/*15.21*/("""</div>
+                """)))}),format.raw/*16.18*/("""
 
-            """),format.raw/*21.13*/("""</div>
+            """),format.raw/*18.13*/("""</div>
             <div class="swiper-scrollbar"></div>
         </div>
 
     </section>
 
     <div class="text-center padding-bottom-20 padding-top-20">
-        <form action=""""),_display_(/*28.24*/routes/*28.30*/.BlogController.create_Blog()),format.raw/*28.59*/("""" method="get">
+        <form action=""""),_display_(/*25.24*/routes/*25.30*/.BlogController.blog_create_get()),format.raw/*25.63*/("""" method="get">
             <button class="btn btn-link">Create your own blog</button>
         </form>
     </div>
@@ -65,15 +64,15 @@ Seq[Any](_display_(/*4.2*/base(title = "Home")/*4.22*/ {_display_(Seq[Any](forma
             <h1 class="white-text text-center">Popular posts</h1>
         </div>
         <br>
-        """),_display_(/*39.10*/for(post <- blogPosts) yield /*39.32*/ {_display_(Seq[Any](format.raw/*39.34*/("""
-            """),format.raw/*40.13*/("""<div class="post-thumb pl-25">
-                """),_display_(/*41.18*/post_thumb(post)),format.raw/*41.34*/("""
-            """),format.raw/*42.13*/("""</div>
-        """)))}),format.raw/*43.10*/("""
+        """),_display_(/*36.10*/for(post <- blogPosts) yield /*36.32*/ {_display_(Seq[Any](format.raw/*36.34*/("""
+            """),format.raw/*37.13*/("""<div class="post-thumb pl-25">
+                """),_display_(/*38.18*/post_thumb(post)),format.raw/*38.34*/("""
+            """),format.raw/*39.13*/("""</div>
+        """)))}),format.raw/*40.10*/("""
 
-    """),format.raw/*45.5*/("""</section>
+    """),format.raw/*42.5*/("""</section>
 
-""")))}),format.raw/*47.2*/("""
+""")))}),format.raw/*44.2*/("""
 
 """))
       }
@@ -91,11 +90,11 @@ Seq[Any](_display_(/*4.2*/base(title = "Home")/*4.22*/ {_display_(Seq[Any](forma
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 09 02:47:54 CET 2018
+                  DATE: Sun Dec 16 17:21:33 CET 2018
                   SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/index.scala.html
-                  HASH: 02b1ccac46d92418c53fc750151ddc0dc084a183
-                  MATRIX: 651->1|696->40|1057->79|1198->128|1226->148|1265->150|1296->155|1521->353|1555->371|1595->373|1644->394|1734->625|1783->647|1820->663|1869->684|1924->708|1966->722|2167->896|2182->902|2232->931|2576->1248|2614->1270|2654->1272|2695->1285|2770->1333|2807->1349|2848->1362|2895->1378|2928->1384|2971->1397
-                  LINES: 24->1|25->2|30->3|35->4|35->4|35->4|36->5|43->12|43->12|43->12|44->13|45->16|46->17|46->17|47->18|48->19|50->21|57->28|57->28|57->28|68->39|68->39|68->39|69->40|70->41|70->41|71->42|72->43|74->45|76->47
+                  HASH: d7763d22e090b5ad0fc7c17967c40562999a90d4
+                  MATRIX: 651->1|696->40|1057->79|1198->128|1226->148|1265->150|1296->155|1521->353|1555->371|1595->373|1644->394|1734->457|1771->473|1820->494|1875->518|1917->532|2118->706|2133->712|2187->745|2531->1062|2569->1084|2609->1086|2650->1099|2725->1147|2762->1163|2803->1176|2850->1192|2883->1198|2926->1211
+                  LINES: 24->1|25->2|30->3|35->4|35->4|35->4|36->5|43->12|43->12|43->12|44->13|45->14|45->14|46->15|47->16|49->18|56->25|56->25|56->25|67->36|67->36|67->36|68->37|69->38|69->38|70->39|71->40|73->42|75->44
                   -- GENERATED --
               */
           

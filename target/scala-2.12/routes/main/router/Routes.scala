@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Amar/Desktop/javaplay/blogapp/conf/routes
-// @DATE:Sat Dec 15 22:31:42 CET 2018
+// @DATE:Sun Dec 16 18:00:57 CET 2018
 
 package router
 
@@ -22,7 +22,7 @@ class Routes(
   BlogPostController_1: controllers.BlogPostController,
   // @LINE:48
   CommentController_2: controllers.CommentController,
-  // @LINE:76
+  // @LINE:75
   Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -37,7 +37,7 @@ class Routes(
     BlogPostController_1: controllers.BlogPostController,
     // @LINE:48
     CommentController_2: controllers.CommentController,
-    // @LINE:76
+    // @LINE:75
     Assets_4: controllers.Assets
   ) = this(errorHandler, HomeController_0, BlogController_3, BlogPostController_1, CommentController_2, Assets_4, "/")
 
@@ -58,24 +58,25 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.HomeController.logout"""),
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """blog/""" + "$" + """id<[^/]+>""", """controllers.HomeController.blog_detail(id:Int)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/blog""", """controllers.BlogController.create_Blog"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/blog""", """controllers.BlogController.save_Blog"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.update_blog(id:Int)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.update_save(id:Int)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.delete_blog(id:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/blog""", """controllers.BlogController.blog_create_get"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/blog""", """controllers.BlogController.blog_create_post"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.blog_update_get(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.blog_update_post(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/blog/""" + "$" + """id<[^/]+>""", """controllers.BlogController.blog_delete(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """post/""" + "$" + """id<[^/]+>""", """controllers.HomeController.blogpost_detail(id:Int)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_create(id:Int)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_save(id:Int)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.update_blogpost(id:Int)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.save_blogpost_update(id:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_create_get(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_create_post(id:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_update_get(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_update_post(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/post/""" + "$" + """id<[^/]+>""", """controllers.BlogPostController.blogpost_delete(id:Int)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_save(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_create_post(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_update_get(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_update_post(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/comment/""" + "$" + """id<[^/]+>""", """controllers.CommentController.comment_delete(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """categories""", """controllers.HomeController.category_detail"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """categories/""" + "$" + """id<[^/]+>""", """controllers.HomeController.category_posts(id:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """categories/""" + "$" + """id<[^/]+>""", """controllers.HomeController.category_blogs(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.HomeController.tag_search"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user/blogs/""" + "$" + """username<[^/]+>""", """controllers.HomeController.user_blogs(username:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """like/post/""" + "$" + """id<[^/]+>""", """controllers.HomeController.likes(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
@@ -212,15 +213,15 @@ class Routes(
   )
 
   // @LINE:23
-  private[this] lazy val controllers_BlogController_create_Blog7_route = Route("GET",
+  private[this] lazy val controllers_BlogController_blog_create_get7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/blog")))
   )
-  private[this] lazy val controllers_BlogController_create_Blog7_invoker = createInvoker(
-    BlogController_3.create_Blog,
+  private[this] lazy val controllers_BlogController_blog_create_get7_invoker = createInvoker(
+    BlogController_3.blog_create_get,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogController",
-      "create_Blog",
+      "blog_create_get",
       Nil,
       "GET",
       this.prefix + """create/blog""",
@@ -230,15 +231,15 @@ class Routes(
   )
 
   // @LINE:24
-  private[this] lazy val controllers_BlogController_save_Blog8_route = Route("POST",
+  private[this] lazy val controllers_BlogController_blog_create_post8_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/blog")))
   )
-  private[this] lazy val controllers_BlogController_save_Blog8_invoker = createInvoker(
-    BlogController_3.save_Blog,
+  private[this] lazy val controllers_BlogController_blog_create_post8_invoker = createInvoker(
+    BlogController_3.blog_create_post,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogController",
-      "save_Blog",
+      "blog_create_post",
       Nil,
       "POST",
       this.prefix + """create/blog""",
@@ -248,15 +249,15 @@ class Routes(
   )
 
   // @LINE:27
-  private[this] lazy val controllers_BlogController_update_blog9_route = Route("GET",
+  private[this] lazy val controllers_BlogController_blog_update_get9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/blog/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogController_update_blog9_invoker = createInvoker(
-    BlogController_3.update_blog(fakeValue[Int]),
+  private[this] lazy val controllers_BlogController_blog_update_get9_invoker = createInvoker(
+    BlogController_3.blog_update_get(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogController",
-      "update_blog",
+      "blog_update_get",
       Seq(classOf[Int]),
       "GET",
       this.prefix + """update/blog/""" + "$" + """id<[^/]+>""",
@@ -266,15 +267,15 @@ class Routes(
   )
 
   // @LINE:28
-  private[this] lazy val controllers_BlogController_update_save10_route = Route("POST",
+  private[this] lazy val controllers_BlogController_blog_update_post10_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/blog/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogController_update_save10_invoker = createInvoker(
-    BlogController_3.update_save(fakeValue[Int]),
+  private[this] lazy val controllers_BlogController_blog_update_post10_invoker = createInvoker(
+    BlogController_3.blog_update_post(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogController",
-      "update_save",
+      "blog_update_post",
       Seq(classOf[Int]),
       "POST",
       this.prefix + """update/blog/""" + "$" + """id<[^/]+>""",
@@ -284,15 +285,15 @@ class Routes(
   )
 
   // @LINE:31
-  private[this] lazy val controllers_BlogController_delete_blog11_route = Route("POST",
+  private[this] lazy val controllers_BlogController_blog_delete11_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete/blog/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogController_delete_blog11_invoker = createInvoker(
-    BlogController_3.delete_blog(fakeValue[Int]),
+  private[this] lazy val controllers_BlogController_blog_delete11_invoker = createInvoker(
+    BlogController_3.blog_delete(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogController",
-      "delete_blog",
+      "blog_delete",
       Seq(classOf[Int]),
       "POST",
       this.prefix + """delete/blog/""" + "$" + """id<[^/]+>""",
@@ -320,15 +321,15 @@ class Routes(
   )
 
   // @LINE:37
-  private[this] lazy val controllers_BlogPostController_blogpost_create13_route = Route("GET",
+  private[this] lazy val controllers_BlogPostController_blogpost_create_get13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_blogpost_create13_invoker = createInvoker(
-    BlogPostController_1.blogpost_create(fakeValue[Int]),
+  private[this] lazy val controllers_BlogPostController_blogpost_create_get13_invoker = createInvoker(
+    BlogPostController_1.blogpost_create_get(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogPostController",
-      "blogpost_create",
+      "blogpost_create_get",
       Seq(classOf[Int]),
       "GET",
       this.prefix + """create/post/""" + "$" + """id<[^/]+>""",
@@ -338,15 +339,15 @@ class Routes(
   )
 
   // @LINE:38
-  private[this] lazy val controllers_BlogPostController_blogpost_save14_route = Route("POST",
+  private[this] lazy val controllers_BlogPostController_blogpost_create_post14_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_blogpost_save14_invoker = createInvoker(
-    BlogPostController_1.blogpost_save(fakeValue[Int]),
+  private[this] lazy val controllers_BlogPostController_blogpost_create_post14_invoker = createInvoker(
+    BlogPostController_1.blogpost_create_post(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogPostController",
-      "blogpost_save",
+      "blogpost_create_post",
       Seq(classOf[Int]),
       "POST",
       this.prefix + """create/post/""" + "$" + """id<[^/]+>""",
@@ -356,15 +357,15 @@ class Routes(
   )
 
   // @LINE:41
-  private[this] lazy val controllers_BlogPostController_update_blogpost15_route = Route("GET",
+  private[this] lazy val controllers_BlogPostController_blogpost_update_get15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_update_blogpost15_invoker = createInvoker(
-    BlogPostController_1.update_blogpost(fakeValue[Int]),
+  private[this] lazy val controllers_BlogPostController_blogpost_update_get15_invoker = createInvoker(
+    BlogPostController_1.blogpost_update_get(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogPostController",
-      "update_blogpost",
+      "blogpost_update_get",
       Seq(classOf[Int]),
       "GET",
       this.prefix + """update/post/""" + "$" + """id<[^/]+>""",
@@ -374,15 +375,15 @@ class Routes(
   )
 
   // @LINE:42
-  private[this] lazy val controllers_BlogPostController_save_blogpost_update16_route = Route("POST",
+  private[this] lazy val controllers_BlogPostController_blogpost_update_post16_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BlogPostController_save_blogpost_update16_invoker = createInvoker(
-    BlogPostController_1.save_blogpost_update(fakeValue[Int]),
+  private[this] lazy val controllers_BlogPostController_blogpost_update_post16_invoker = createInvoker(
+    BlogPostController_1.blogpost_update_post(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.BlogPostController",
-      "save_blogpost_update",
+      "blogpost_update_post",
       Seq(classOf[Int]),
       "POST",
       this.prefix + """update/post/""" + "$" + """id<[^/]+>""",
@@ -410,15 +411,15 @@ class Routes(
   )
 
   // @LINE:48
-  private[this] lazy val controllers_CommentController_comment_save18_route = Route("POST",
+  private[this] lazy val controllers_CommentController_comment_create_post18_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create/comment/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CommentController_comment_save18_invoker = createInvoker(
-    CommentController_2.comment_save(fakeValue[Int]),
+  private[this] lazy val controllers_CommentController_comment_create_post18_invoker = createInvoker(
+    CommentController_2.comment_create_post(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CommentController",
-      "comment_save",
+      "comment_create_post",
       Seq(classOf[Int]),
       "POST",
       this.prefix + """create/comment/""" + "$" + """id<[^/]+>""",
@@ -500,15 +501,15 @@ class Routes(
   )
 
   // @LINE:61
-  private[this] lazy val controllers_HomeController_category_posts23_route = Route("GET",
+  private[this] lazy val controllers_HomeController_category_blogs23_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("categories/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_category_posts23_invoker = createInvoker(
-    HomeController_0.category_posts(fakeValue[Int]),
+  private[this] lazy val controllers_HomeController_category_blogs23_invoker = createInvoker(
+    HomeController_0.category_blogs(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "category_posts",
+      "category_blogs",
       Seq(classOf[Int]),
       "GET",
       this.prefix + """categories/""" + "$" + """id<[^/]+>""",
@@ -536,10 +537,28 @@ class Routes(
   )
 
   // @LINE:67
-  private[this] lazy val controllers_HomeController_likes25_route = Route("GET",
+  private[this] lazy val controllers_HomeController_user_blogs25_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/blogs/"), DynamicPart("username", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_HomeController_user_blogs25_invoker = createInvoker(
+    HomeController_0.user_blogs(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "user_blogs",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """user/blogs/""" + "$" + """username<[^/]+>""",
+      """User blogs""",
+      Seq()
+    )
+  )
+
+  // @LINE:70
+  private[this] lazy val controllers_HomeController_likes26_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("like/post/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_likes25_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_likes26_invoker = createInvoker(
     HomeController_0.likes(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -553,11 +572,11 @@ class Routes(
     )
   )
 
-  // @LINE:76
-  private[this] lazy val controllers_Assets_versioned26_route = Route("GET",
+  // @LINE:75
+  private[this] lazy val controllers_Assets_versioned27_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned26_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned27_invoker = createInvoker(
     Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -617,33 +636,33 @@ class Routes(
       }
   
     // @LINE:23
-    case controllers_BlogController_create_Blog7_route(params@_) =>
+    case controllers_BlogController_blog_create_get7_route(params@_) =>
       call { 
-        controllers_BlogController_create_Blog7_invoker.call(BlogController_3.create_Blog)
+        controllers_BlogController_blog_create_get7_invoker.call(BlogController_3.blog_create_get)
       }
   
     // @LINE:24
-    case controllers_BlogController_save_Blog8_route(params@_) =>
+    case controllers_BlogController_blog_create_post8_route(params@_) =>
       call { 
-        controllers_BlogController_save_Blog8_invoker.call(BlogController_3.save_Blog)
+        controllers_BlogController_blog_create_post8_invoker.call(BlogController_3.blog_create_post)
       }
   
     // @LINE:27
-    case controllers_BlogController_update_blog9_route(params@_) =>
+    case controllers_BlogController_blog_update_get9_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogController_update_blog9_invoker.call(BlogController_3.update_blog(id))
+        controllers_BlogController_blog_update_get9_invoker.call(BlogController_3.blog_update_get(id))
       }
   
     // @LINE:28
-    case controllers_BlogController_update_save10_route(params@_) =>
+    case controllers_BlogController_blog_update_post10_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogController_update_save10_invoker.call(BlogController_3.update_save(id))
+        controllers_BlogController_blog_update_post10_invoker.call(BlogController_3.blog_update_post(id))
       }
   
     // @LINE:31
-    case controllers_BlogController_delete_blog11_route(params@_) =>
+    case controllers_BlogController_blog_delete11_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogController_delete_blog11_invoker.call(BlogController_3.delete_blog(id))
+        controllers_BlogController_blog_delete11_invoker.call(BlogController_3.blog_delete(id))
       }
   
     // @LINE:34
@@ -653,27 +672,27 @@ class Routes(
       }
   
     // @LINE:37
-    case controllers_BlogPostController_blogpost_create13_route(params@_) =>
+    case controllers_BlogPostController_blogpost_create_get13_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_blogpost_create13_invoker.call(BlogPostController_1.blogpost_create(id))
+        controllers_BlogPostController_blogpost_create_get13_invoker.call(BlogPostController_1.blogpost_create_get(id))
       }
   
     // @LINE:38
-    case controllers_BlogPostController_blogpost_save14_route(params@_) =>
+    case controllers_BlogPostController_blogpost_create_post14_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_blogpost_save14_invoker.call(BlogPostController_1.blogpost_save(id))
+        controllers_BlogPostController_blogpost_create_post14_invoker.call(BlogPostController_1.blogpost_create_post(id))
       }
   
     // @LINE:41
-    case controllers_BlogPostController_update_blogpost15_route(params@_) =>
+    case controllers_BlogPostController_blogpost_update_get15_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_update_blogpost15_invoker.call(BlogPostController_1.update_blogpost(id))
+        controllers_BlogPostController_blogpost_update_get15_invoker.call(BlogPostController_1.blogpost_update_get(id))
       }
   
     // @LINE:42
-    case controllers_BlogPostController_save_blogpost_update16_route(params@_) =>
+    case controllers_BlogPostController_blogpost_update_post16_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_BlogPostController_save_blogpost_update16_invoker.call(BlogPostController_1.save_blogpost_update(id))
+        controllers_BlogPostController_blogpost_update_post16_invoker.call(BlogPostController_1.blogpost_update_post(id))
       }
   
     // @LINE:45
@@ -683,9 +702,9 @@ class Routes(
       }
   
     // @LINE:48
-    case controllers_CommentController_comment_save18_route(params@_) =>
+    case controllers_CommentController_comment_create_post18_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_CommentController_comment_save18_invoker.call(CommentController_2.comment_save(id))
+        controllers_CommentController_comment_create_post18_invoker.call(CommentController_2.comment_create_post(id))
       }
   
     // @LINE:51
@@ -713,9 +732,9 @@ class Routes(
       }
   
     // @LINE:61
-    case controllers_HomeController_category_posts23_route(params@_) =>
+    case controllers_HomeController_category_blogs23_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_HomeController_category_posts23_invoker.call(HomeController_0.category_posts(id))
+        controllers_HomeController_category_blogs23_invoker.call(HomeController_0.category_blogs(id))
       }
   
     // @LINE:64
@@ -725,15 +744,21 @@ class Routes(
       }
   
     // @LINE:67
-    case controllers_HomeController_likes25_route(params@_) =>
-      call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_HomeController_likes25_invoker.call(HomeController_0.likes(id))
+    case controllers_HomeController_user_blogs25_route(params@_) =>
+      call(params.fromPath[String]("username", None)) { (username) =>
+        controllers_HomeController_user_blogs25_invoker.call(HomeController_0.user_blogs(username))
       }
   
-    // @LINE:76
-    case controllers_Assets_versioned26_route(params@_) =>
+    // @LINE:70
+    case controllers_HomeController_likes26_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_HomeController_likes26_invoker.call(HomeController_0.likes(id))
+      }
+  
+    // @LINE:75
+    case controllers_Assets_versioned27_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned26_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned27_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }

@@ -6,16 +6,22 @@ import models.User;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Security;
 import scala.collection.JavaConverters;
 import scala.collection.Seq;
 import views.html.blog.blog_create;
 import views.html.blog.blog_update;
+
+import javax.imageio.ImageIO;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -25,9 +31,9 @@ public class BlogController extends Controller {
     @Inject
     FormFactory formFactory;
 
-
+    //blog create get method
     @Security.Authenticated(Secured.class)
-    public Result create_Blog(){
+    public Result blog_create_get(){
         Form<Blog> blogForm = formFactory.form(Blog.class);
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
@@ -43,10 +49,15 @@ public class BlogController extends Controller {
         return ok(blog_create.render(blogForm,categories));
     }
 
+    //blog create post method
     @Security.Authenticated(Secured.class)
-    public Result save_Blog(){
+    public Result blog_create_post(){
         Form<Blog> blogForm = formFactory.form(Blog.class).bindFromRequest();
         Blog blog = blogForm.get();
+
+        Http.MultipartFormData<File> body = request().body().asMultipartFormData();
+        Http.MultipartFormData.FilePart<File> picture = body.getFile("picture");
+
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
@@ -60,14 +71,36 @@ public class BlogController extends Controller {
 
         entityManager.persist(blog);
 
+
+        if(!picture.getFilename().isEmpty()){
+            File file = picture.getFile();
+
+            BufferedImage i = null;
+            try{
+                i = ImageIO.read(file);
+            }catch (IOException e){  }
+            String file_path = "media/"+ Integer.toString(blog.getId())+"blog.jpg";
+            File path = new File(System.getProperty("user.dir")+"/public/"+file_path);
+            try {
+                path.createNewFile();
+                ImageIO.write(i, "jpg", path);
+                blog.setPicture_path(file_path) ;
+            }catch (IOException e){
+            }
+        }
+
+        entityManager.persist(blog);
+
         entityManager.getTransaction().commit();
         entityManagerFactory.close();
 
         return redirect(routes.HomeController.index());
     }
 
+
+    //blog update get method
     @Security.Authenticated(Secured.class)
-    public Result update_blog(int id){
+    public Result blog_update_get(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
@@ -82,11 +115,16 @@ public class BlogController extends Controller {
         return ok(blog_update.render(blog,blogForm,categories_list));
     }
 
+
+    //blog update post method
     @Security.Authenticated(Secured.class)
-    public Result update_save(int id){
+    public Result blog_update_post(int id){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
+
+        Http.MultipartFormData<File> body = request().body().asMultipartFormData();
+        Http.MultipartFormData.FilePart<File> picture = body.getFile("picture");
 
         Blog blog = entityManager.find(Blog.class,id);
         Form<Blog> blog_edited = formFactory.form(Blog.class).bindFromRequest();
@@ -95,12 +133,24 @@ public class BlogController extends Controller {
         if (parseInt(blog_edited.field("Category").value()) != blog.getCategory().getId()){
             Category category = entityManager.createQuery("from Category  where id="+blog_edited.field("Category").value(), Category.class).getSingleResult();
             blog.setBlog_title(temp_blog.getBlog_title());
-            blog.setTags(temp_blog.getTags());
             category.addBlog(blog);
         }
         else{
             blog.setBlog_title(temp_blog.getBlog_title());
-            blog.setTags(temp_blog.getTags());
+        }
+
+        if(!picture.getFilename().isEmpty()){
+            File file = picture.getFile();
+            BufferedImage i = null;
+            try{
+                i = ImageIO.read(file);
+
+            }catch (IOException e){  }
+            File path = new File(System.getProperty("user.dir")+"/public/"+blog.getPicture_path());
+            try {
+                ImageIO.write(i, "jpg", path);
+            }catch (IOException e){
+            }
         }
 
         entityManager.getTransaction().commit();
@@ -108,8 +158,10 @@ public class BlogController extends Controller {
         return redirect(routes.HomeController.blog_detail(id));
     }
 
+
+    //delete blog
     @Security.Authenticated(Secured.class)
-    public Result delete_blog(int id){
+    public Result blog_delete(int id){
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -117,7 +169,14 @@ public class BlogController extends Controller {
 
         Blog blog = entityManager.find(Blog.class,id);
 
-        entityManager.remove(blog);
+
+
+        if(Secured.getName(ctx()).equals(blog.getUser().getName())) {
+            entityManager.remove(blog);
+            File file = new File(System.getProperty("user.dir")+"/public/"+blog.getPicture_path());
+            file.delete();
+        }
+
 
         entityManager.getTransaction().commit();
         entityManagerFactory.close();
