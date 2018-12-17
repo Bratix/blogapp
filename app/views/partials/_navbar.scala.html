@@ -23,9 +23,9 @@
 
 
                     @if(name == null){
-                        <a href="@routes.HomeController.login_get()">Sing in</a>
+                        <a href="@routes.HomeController.login_get()">Sign in</a>
                         <span class="separator"> | </span>
-                        <a href="@routes.HomeController.register_get()">Sing up</a>
+                        <a href="@routes.HomeController.register_get()">Sign up</a>
                     }else{
                         <a href="@routes.HomeController.user_blogs(name)">@name</a>
                         <span class="separator"> | </span>
