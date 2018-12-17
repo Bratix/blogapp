@@ -71,8 +71,8 @@ Seq[Any](format.raw/*1.51*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 16 17:21:33 CET 2018
-                  SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/blog/blog_create.scala.html
+                  DATE: Mon Dec 17 01:16:55 CET 2018
+                  SOURCE: C:/Users/Amar/Desktop/javaplay_ss/blogapp/app/views/blog/blog_create.scala.html
                   HASH: 668ebb836602fb1023abdf9d89c0ba0e05573f3e
                   MATRIX: 977->1|1099->53|1197->50|1225->124|1262->153|1300->154|1334->162|1615->416|1630->422|1743->525|1784->527|1830->546|1961->655|2007->673|2087->726|2229->846|2277->866|2476->1034|2518->1048
                   LINES: 28->1|31->2|34->1|35->3|35->3|35->3|37->5|43->11|43->11|43->11|43->11|44->12|44->12|45->13|46->14|46->14|48->16|52->20|53->21

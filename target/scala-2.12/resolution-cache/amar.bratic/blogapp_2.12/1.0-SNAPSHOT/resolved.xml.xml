@@ -4,7 +4,7 @@
 		module="blogapp_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20181127170631"
+		publication="20181217011622"
 	>
 		<description>
 		blogapp
@@ -53,7 +53,7 @@
 		<dependency org="com.typesafe.play" name="play-java-jpa_2.12" rev="2.6.20" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.12" rev="2.6.20" conf="compile->default(compile)"/>
 		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="5.1.10.Final" conf="compile->default(compile)"/>
-		<dependency org="mysql" name="mysql-connector-java" rev="5.1.37" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="8.0.11" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-ahc-ws_2.12" rev="2.6.20" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

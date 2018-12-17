@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Amar/Desktop/javaplay/blogapp/conf/routes
-// @DATE:Sun Dec 16 18:00:57 CET 2018
+// @SOURCE:C:/Users/Amar/Desktop/javaplay_ss/blogapp/conf/routes
+// @DATE:Mon Dec 17 01:16:54 CET 2018
 
 package controllers;
 

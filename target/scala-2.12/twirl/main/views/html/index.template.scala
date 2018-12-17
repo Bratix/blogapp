@@ -58,7 +58,7 @@ Seq[Any](_display_(/*4.2*/base(title = "Home")/*4.22*/ {_display_(Seq[Any](forma
         </form>
     </div>
 
-    <section class="col-md-4 col-md-offset-1 padding-top-20">
+    <section class="col-md-6 col-md-offset-1 padding-top-20">
 
         <div class="section-title">
             <h1 class="white-text text-center">Popular posts</h1>
@@ -90,9 +90,9 @@ Seq[Any](_display_(/*4.2*/base(title = "Home")/*4.22*/ {_display_(Seq[Any](forma
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 16 17:21:33 CET 2018
-                  SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/index.scala.html
-                  HASH: d7763d22e090b5ad0fc7c17967c40562999a90d4
+                  DATE: Mon Dec 17 01:16:55 CET 2018
+                  SOURCE: C:/Users/Amar/Desktop/javaplay_ss/blogapp/app/views/index.scala.html
+                  HASH: 0046077455d1a9f327a4812049ddd3630fb60303
                   MATRIX: 651->1|696->40|1057->79|1198->128|1226->148|1265->150|1296->155|1521->353|1555->371|1595->373|1644->394|1734->457|1771->473|1820->494|1875->518|1917->532|2118->706|2133->712|2187->745|2531->1062|2569->1084|2609->1086|2650->1099|2725->1147|2762->1163|2803->1176|2850->1192|2883->1198|2926->1211
                   LINES: 24->1|25->2|30->3|35->4|35->4|35->4|36->5|43->12|43->12|43->12|44->13|45->14|45->14|46->15|47->16|49->18|56->25|56->25|56->25|67->36|67->36|67->36|68->37|69->38|69->38|70->39|71->40|73->42|75->44
                   -- GENERATED --

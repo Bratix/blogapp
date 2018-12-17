@@ -39,7 +39,7 @@ Seq[Any](format.raw/*1.17*/("""
                 <span> &nbsp; Blogo</span>
             </div>
 
-            <div class="page-links col-md-2">
+            <div class="page-links col-md-3">
                 <a href=""""),_display_(/*11.27*/routes/*11.33*/.HomeController.index()),format.raw/*11.56*/("""">  Home </a>
                 <a href=""""),_display_(/*12.27*/routes/*12.33*/.HomeController.category_detail),format.raw/*12.64*/(""""> Categories </a>
             </div>
@@ -87,9 +87,9 @@ Seq[Any](format.raw/*1.17*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 16 18:00:57 CET 2018
-                  SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/partials/_navbar.scala.html
-                  HASH: 13245ac03087db9fa15617d2b96ffb652278f9dd
+                  DATE: Mon Dec 17 01:16:55 CET 2018
+                  SOURCE: C:/Users/Amar/Desktop/javaplay_ss/blogapp/app/views/partials/_navbar.scala.html
+                  HASH: beb87bbdc7e5c62b14a9ae48eb83d9a6023f243a
                   MATRIX: 959->1|1069->16|1097->18|1412->306|1427->312|1471->335|1539->376|1554->382|1606->413|1742->522|1757->528|1804->554|2234->957|2259->973|2298->974|2352->1000|2389->1010|2404->1016|2452->1043|2588->1152|2603->1158|2654->1188|2709->1224|2722->1228|2761->1229|2815->1255|2852->1265|2867->1271|2920->1303|2950->1306|2975->1310|3102->1410|3117->1416|3162->1440|3228->1475|3278->1497
                   LINES: 28->1|33->1|34->2|43->11|43->11|43->11|44->12|44->12|44->12|48->16|48->16|48->16|57->25|57->25|57->25|58->26|58->26|58->26|58->26|60->28|60->28|60->28|61->29|61->29|61->29|62->30|62->30|62->30|62->30|62->30|62->30|64->32|64->32|64->32|65->33|68->36
                   -- GENERATED --

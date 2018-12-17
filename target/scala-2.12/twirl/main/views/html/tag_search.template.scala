@@ -39,7 +39,7 @@ Seq[Any](format.raw/*2.26*/("""
     """),_display_(/*7.6*/for(post <- posts) yield /*7.24*/{_display_(Seq[Any](format.raw/*7.25*/("""
         """),format.raw/*8.9*/("""<div class="row">
 
-            <div class="post-thumb pl-25 col-md-7 col-md-offset-3">
+            <div class="post-thumb pl-25 col-md-8 col-md-offset-2">
             """),_display_(/*11.14*/post_thumb(post)),format.raw/*11.30*/("""
             """),format.raw/*12.13*/("""</div>
 
@@ -61,9 +61,9 @@ Seq[Any](format.raw/*2.26*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Dec 11 00:57:20 CET 2018
-                  SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/tag_search.scala.html
-                  HASH: b2d331d72c0586efac24f61143b7ceec21127337
+                  DATE: Mon Dec 17 01:16:55 CET 2018
+                  SOURCE: C:/Users/Amar/Desktop/javaplay_ss/blogapp/app/views/tag_search.scala.html
+                  HASH: b8a4c8c96e723f531cabf77ec8346e8788f517b0
                   MATRIX: 651->1|995->30|1114->54|1142->57|1170->77|1208->78|1240->84|1418->237|1451->255|1489->256|1525->266|1655->369|1692->385|1734->399|1795->430
                   LINES: 24->1|29->2|34->2|35->3|35->3|35->3|36->4|39->7|39->7|39->7|40->8|43->11|43->11|44->12|47->15
                   -- GENERATED --

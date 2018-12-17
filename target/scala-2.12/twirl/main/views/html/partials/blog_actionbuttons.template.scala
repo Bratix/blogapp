@@ -77,8 +77,8 @@ Seq[Any](format.raw/*1.14*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 16 17:21:33 CET 2018
-                  SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/partials/blog_actionbuttons.scala.html
+                  DATE: Mon Dec 17 01:16:55 CET 2018
+                  SOURCE: C:/Users/Amar/Desktop/javaplay_ss/blogapp/app/views/partials/blog_actionbuttons.scala.html
                   HASH: 7a557142035f939e59baacb5b2b0eaac4bd86bdd
                   MATRIX: 968->1|1075->13|1103->15|1221->107|1235->113|1306->164|1614->445|1629->451|1706->507|2010->784|2025->790|2098->842
                   LINES: 28->1|33->1|34->2|38->6|38->6|38->6|48->16|48->16|48->16|57->25|57->25|57->25

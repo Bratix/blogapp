@@ -34,14 +34,14 @@ object blogpost_detail extends _root_.play.twirl.api.BaseScalaTemplate[play.twir
 Seq[Any](format.raw/*2.60*/("""
 """),_display_(/*3.2*/base(title = "Post")/*3.22*/{_display_(Seq[Any](format.raw/*3.23*/("""
     """),format.raw/*4.5*/("""<div class="row">
-        <section class="col-md-6 col-md-offset-1">
+        <section class="col-md-7 col-md-offset-1">
             <div class="post-thumb pl-25">
                 """),_display_(/*7.18*/post_content(post,commentForm, user)),format.raw/*7.54*/("""
             """),format.raw/*8.13*/("""</div>
 
         </section>
 
-        <section class="col-md-offset-2 col-md-2">
+        <section class="col-md-offset-1 col-md-2">
 
             <h1 class="section-title text-center">About me</h1>
 
@@ -71,9 +71,9 @@ Seq[Any](format.raw/*2.60*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 09 16:10:29 CET 2018
-                  SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/blogpost_detail.scala.html
-                  HASH: 8bd2eafda640511f70bcf303a437ba7cbb2cabd0
+                  DATE: Mon Dec 17 01:16:55 CET 2018
+                  SOURCE: C:/Users/Amar/Desktop/javaplay_ss/blogapp/app/views/blogpost_detail.scala.html
+                  HASH: a9b120d6db15f852ccb5f4a38cab74ca640ec6a8
                   MATRIX: 651->1|1048->65|1201->123|1229->126|1257->146|1295->147|1327->153|1485->285|1541->321|1582->335|1833->559|1846->563|1883->579|1950->619|2007->667|2047->669|2093->688|2142->716|2188->731|2229->745
                   LINES: 24->1|29->2|34->2|35->3|35->3|35->3|36->4|39->7|39->7|40->8|49->17|49->17|49->17|51->19|51->19|51->19|52->20|52->20|53->21|56->24
                   -- GENERATED --

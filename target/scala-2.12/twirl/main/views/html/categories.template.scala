@@ -38,7 +38,7 @@ Seq[Any](format.raw/*1.30*/("""
         <div class="row">
 
         """),_display_(/*8.10*/for(category <- categories) yield /*8.37*/{_display_(Seq[Any](format.raw/*8.38*/("""
-            """),format.raw/*9.13*/("""<div class="container-category col-md-3 ml-30 mb-20">
+            """),format.raw/*9.13*/("""<div class="container-category col-md-offset-1 col-md-5 ml-30 mb-20">
                 <img src=""""),_display_(/*10.28*/routes/*10.34*/.Assets.versioned(category.getPicture)),format.raw/*10.72*/("""" alt="" height="300" width="400">
                 <div class="catagory-title">
                     <a href=""""),_display_(/*12.31*/routes/*12.37*/.HomeController.category_blogs(category.getId)),format.raw/*12.83*/("""" class="btn btn-link-category">
@@ -68,10 +68,10 @@ Seq[Any](format.raw/*1.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 16 17:50:56 CET 2018
-                  SOURCE: C:/Users/Amar/Desktop/javaplay/blogapp/app/views/categories.scala.html
-                  HASH: fd4e1ebcf9a5725e5d0416f65d8442f2c8908f6f
-                  MATRIX: 961->1|1084->29|1112->32|1146->58|1184->59|1220->69|1315->138|1357->165|1395->166|1436->180|1545->262|1560->268|1619->306|1758->418|1773->424|1840->470|1931->534|1948->542|1977->550|2006->551|2123->637|2160->647
+                  DATE: Mon Dec 17 01:16:55 CET 2018
+                  SOURCE: C:/Users/Amar/Desktop/javaplay_ss/blogapp/app/views/categories.scala.html
+                  HASH: 60b4397a170bce336e130cde217685eae5ce0f7a
+                  MATRIX: 961->1|1084->29|1112->32|1146->58|1184->59|1220->69|1315->138|1357->165|1395->166|1436->180|1561->278|1576->284|1635->322|1774->434|1789->440|1856->486|1947->550|1964->558|1993->566|2022->567|2139->653|2176->663
                   LINES: 28->1|33->1|34->2|34->2|34->2|37->5|40->8|40->8|40->8|41->9|42->10|42->10|42->10|44->12|44->12|44->12|45->13|45->13|45->13|45->13|49->17|50->18
                   -- GENERATED --
               */

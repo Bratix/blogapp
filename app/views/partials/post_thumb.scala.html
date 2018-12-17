@@ -1,6 +1,8 @@
 @(post : BlogPost)
 
-<img src="@routes.Assets.versioned(post.getPicture_path)" alt="" >
+<div class="text-center">
+    <img src="@routes.Assets.versioned(post.getPicture_path)" alt="" >
+</div>
 
 <h5 class="grey-text"> by @post.getUser.getName </h5>
 
@@ -9,8 +11,6 @@
 <a href="@routes.HomeController.blogpost_detail(post.getId)" class="thumb-link">
     <h3> @post.getPost_title </h3>
 </a>
-
-<p class="padding-bottom-20">&nbsp;@post.getPost_text </p>
 
 <div class="tags-area">
         @for(tag <- post.getTags.split(",") ) {

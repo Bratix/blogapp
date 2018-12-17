@@ -1,6 +1,6 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay\blogapp\conf\application.conf,C:\Users\Amar\Desktop\javaplay\blogapp\target\scala-2.12\classes\application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay\blogapp\conf\logback.xml,C:\Users\Amar\Desktop\javaplay\blogapp\target\scala-2.12\classes\logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay\blogapp\conf\META-INF,C:\Users\Amar\Desktop\javaplay\blogapp\target\scala-2.12\classes\META-INF)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay\blogapp\conf\META-INF\persistence.xml,C:\Users\Amar\Desktop\javaplay\blogapp\target\scala-2.12\classes\META-INF\persistence.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay\blogapp\conf\routes,C:\Users\Amar\Desktop\javaplay\blogapp\target\scala-2.12\classes\routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay_ss\blogapp\conf\application.conf,C:\Users\Amar\Desktop\javaplay_ss\blogapp\target\scala-2.12\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay_ss\blogapp\conf\logback.xml,C:\Users\Amar\Desktop\javaplay_ss\blogapp\target\scala-2.12\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay_ss\blogapp\conf\META-INF,C:\Users\Amar\Desktop\javaplay_ss\blogapp\target\scala-2.12\classes\META-INF)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay_ss\blogapp\conf\META-INF\persistence.xml,C:\Users\Amar\Desktop\javaplay_ss\blogapp\target\scala-2.12\classes\META-INF\persistence.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Amar\Desktop\javaplay_ss\blogapp\conf\routes,C:\Users\Amar\Desktop\javaplay_ss\blogapp\target\scala-2.12\classes\routes)[0m
